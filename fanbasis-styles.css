@@ -68,6 +68,17 @@ body {
     align-items: center;
 }
 
+.nav-logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo a:hover {
+    transform: scale(1.05);
+}
+
 .logo-img {
     height: 40px;
     width: auto;
