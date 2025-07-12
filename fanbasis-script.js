@@ -4,8 +4,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.querySelector('.nav-menu');
 
     if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function() {
+        console.log('Mobile menu elements found');
+        
+        navToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Hamburger clicked');
+            
             navMenu.classList.toggle('active');
+            console.log('Menu active:', navMenu.classList.contains('active'));
             
             // Animate hamburger menu
             const bars = navToggle.querySelectorAll('.bar');
@@ -22,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Close mobile menu when clicking on a link
-        const navLinks = document.querySelectorAll('.nav-link');
+        const navLinks = document.querySelectorAll('.nav-link, .nav-cta');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -33,6 +40,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
         });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+                const bars = navToggle.querySelectorAll('.bar');
+                bars.forEach(bar => {
+                    bar.style.transform = 'none';
+                    bar.style.opacity = '1';
+                });
+            }
+        });
+    } else {
+        console.log('Mobile menu elements not found');
+        console.log('navToggle:', navToggle);
+        console.log('navMenu:', navMenu);
     }
 
     // Smooth scrolling for anchor links
