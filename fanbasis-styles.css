@@ -60,6 +60,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    position: relative;
 }
 
 .nav-logo {
@@ -133,9 +134,10 @@ body {
 .bar {
     width: 25px;
     height: 3px;
-    background: var(--text);
+    background: #000;
     margin: 3px 0;
     transition: 0.3s;
+    border-radius: 2px;
 }
 
 /* Hero Section */
@@ -812,10 +814,55 @@ body {
     
     .nav-menu {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+        animation: slideDown 0.3s ease-out;
     }
     
     .nav-toggle {
         display: flex;
+    }
+    
+    .nav-link, .nav-cta {
+        color: white !important;
+        font-size: 1.1rem;
+        padding: 0.8rem 1.5rem;
+        width: 100%;
+        text-align: center;
+        border-radius: 10px;
+        margin: 0.2rem 0;
+    }
+    
+    .nav-cta {
+        background: var(--primary);
+        color: #000 !important;
+        margin-top: 0.5rem;
+    }
+    
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     
     .hero-container {
