@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OfferLaunch Dashboard - 30-Day Comprehensive Audit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <nav class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo">
+                    <img src="offer-launch-assets/Asset 1.png" alt="Offer Launch Logo">
+                </a>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="active"><a href="#overview"><i class="fas fa-home"></i> Overview</a></li>
+                <li><a href="#progress"><i class="fas fa-tasks"></i> Audit Progress</a></li>
+                <li><a href="#documents"><i class="fas fa-folder"></i> Documents</a></li>
+                <li><a href="#calls"><i class="fas fa-calendar"></i> Strategy Calls</a></li>
+                <li><a href="#chat"><i class="fas fa-comments"></i> Communication</a></li>
+                <li><a href="#summary"><i class="fas fa-file-alt"></i> Executive Summary</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="dashboard-main">
+            <!-- Welcome / Overview Panel -->
+            <section id="overview" class="dashboard-section">
+                <div class="welcome-panel">
+                    <div class="welcome-header">
+                        <h1>Welcome back, <span class="client-name">John Doe</span></h1>
+                        <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 40%"></div>
+                        </div>
+                        <p class="day-counter">Day 12 of 30</p>
+                        </div>
+                    </div>
+                    <div class="consultant-info">
+                        <div class="consultant-avatar">
+                            <img src="https://via.placeholder.com/50" alt="Consultant">
+                        </div>
+                        <div class="consultant-details">
+                            <h3>Your OfferLaunch Consultant</h3>
+                            <p class="consultant-name">Sarah Johnson</p>
+                            <div class="contact-info">
+                                <a href="mailto:sarah@offerlaunch.com"><i class="fas fa-envelope"></i> sarah@offerlaunch.com</a>
+                                <a href="tel:5551234567"><i class="fas fa-phone"></i> (555) 123-4567</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="audit-scope">
+                        <h3>30-Day Comprehensive Audit Scope</h3>
+                        <div class="scope-grid">
+                            <div class="scope-card">
+                                <i class="fas fa-chart-line"></i>
+                                <h4>Sales Strategy</h4>
+                                <p>Funnel optimization & conversion tracking</p>
+                            </div>
+                            <div class="scope-card">
+                                <i class="fas fa-bullhorn"></i>
+                                <h4>Marketing Campaigns</h4>
+                                <p>Ad analysis & creative enhancement</p>
+                            </div>
+                            <div class="scope-card">
+                                <i class="fas fa-cogs"></i>
+                                <h4>Operations</h4>
+                                <p>Systems review & efficiency optimization</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Audit Progress Tracker -->
+            <section id="progress" class="dashboard-section">
+                <h2>Audit Progress Tracker</h2>
+                <div class="audit-phases">
+                    <!-- Sales Audit Phase -->
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <h3><i class="fas fa-chart-line"></i> Sales Audit</h3>
+                            <span class="status-badge in-progress">In Progress</span>
+                        </div>
+                        <div class="phase-content">
+                            <div class="upload-section">
+                                <h4>Required Documents</h4>
+                                <div class="file-upload-container">
+                                <div class="file-upload">
+                                    <input type="file" id="sales-script" accept=".pdf,.doc,.docx">
+                                        <label for="sales-script">
+                                            <i class="fas fa-upload"></i>
+                                            <span>Upload Sales Script</span>
+                                        </label>
+                                </div>
+                                <div class="file-upload">
+                                    <input type="file" id="funnel-data" accept=".pdf,.xlsx">
+                                        <label for="funnel-data">
+                                            <i class="fas fa-upload"></i>
+                                            <span>Upload Funnel Data</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="deliverables-section">
+                                <h4>Deliverables</h4>
+                                <div class="deliverables-grid">
+                                    <a href="#" class="deliverable-card">
+                                        <i class="fas fa-file-powerpoint"></i>
+                                        <span>Pitch Deck Template</span>
+                                    </a>
+                                    <a href="#" class="deliverable-card">
+                                        <i class="fas fa-book"></i>
+                                        <span>Sales Playbook</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="check-in">
+                                <h4>Next Check-in</h4>
+                                <div class="check-in-details">
+                                    <p><i class="fas fa-calendar"></i> March 15, 2024</p>
+                                    <p><i class="fas fa-clock"></i> 2:00 PM EST</p>
+                                </div>
+                                <button class="btn-secondary">Reschedule</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Marketing Audit Phase -->
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <h3><i class="fas fa-bullhorn"></i> Marketing Audit</h3>
+                            <span class="status-badge not-started">Not Started</span>
+                        </div>
+                        <div class="phase-content">
+                            <div class="upload-section">
+                                <h4>Required Documents</h4>
+                                <div class="file-upload-container">
+                                <div class="file-upload">
+                                    <input type="file" id="ad-creative" accept=".pdf,.jpg,.png">
+                                        <label for="ad-creative">
+                                            <i class="fas fa-upload"></i>
+                                            <span>Upload Ad Creative</span>
+                                        </label>
+                                </div>
+                                <div class="file-upload">
+                                    <input type="file" id="vsl" accept=".mp4">
+                                        <label for="vsl">
+                                            <i class="fas fa-upload"></i>
+                                            <span>Upload VSL</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="deliverables-section">
+                                <h4>Deliverables</h4>
+                                <div class="deliverables-grid">
+                                    <a href="#" class="deliverable-card">
+                                        <i class="fas fa-paint-brush"></i>
+                                        <span>Brand Blueprint</span>
+                                    </a>
+                                    <a href="#" class="deliverable-card">
+                                        <i class="fas fa-video"></i>
+                                        <span>VSL Script</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Operations Audit Phase -->
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <h3><i class="fas fa-cogs"></i> Operations Audit</h3>
+                            <span class="status-badge not-started">Not Started</span>
+                        </div>
+                        <div class="phase-content">
+                            <div class="upload-section">
+                                <h4>Required Documents</h4>
+                                <div class="file-upload-container">
+                                <div class="file-upload">
+                                    <input type="file" id="sops" accept=".pdf,.doc">
+                                        <label for="sops">
+                                            <i class="fas fa-upload"></i>
+                                            <span>Upload SOPs</span>
+                                        </label>
+                                </div>
+                                <div class="file-upload">
+                                    <input type="file" id="workflows" accept=".pdf">
+                                        <label for="workflows">
+                                            <i class="fas fa-upload"></i>
+                                            <span>Upload Workflows</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="deliverables-section">
+                                <h4>Deliverables</h4>
+                                <div class="deliverables-grid">
+                                    <a href="#" class="deliverable-card">
+                                        <i class="fas fa-users-cog"></i>
+                                        <span>CRM Guide</span>
+                                    </a>
+                                    <a href="#" class="deliverable-card">
+                                        <i class="fas fa-chart-bar"></i>
+                                        <span>KPI Dashboard</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Shared Document Hub -->
+            <section id="documents" class="dashboard-section">
+                <h2>Document Hub</h2>
+                <div class="document-grid">
+                    <div class="document-card">
+                        <h3><i class="fas fa-file-alt"></i> Audit Deliverables</h3>
+                        <div class="document-list">
+                            <div class="document-item">
+                                <div class="document-icon">
+                                <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="document-info">
+                                    <h4>Sales Strategy Report</h4>
+                                    <p>Updated 2 days ago</p>
+                                </div>
+                                <button class="btn-icon" title="Download"><i class="fas fa-download"></i></button>
+                            </div>
+                            <div class="document-item">
+                                <div class="document-icon">
+                                <i class="fas fa-file-word"></i>
+                                </div>
+                                <div class="document-info">
+                                    <h4>Marketing Blueprint</h4>
+                                    <p>Updated 1 week ago</p>
+                                </div>
+                                <button class="btn-icon" title="Download"><i class="fas fa-download"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="document-card">
+                        <h3><i class="fas fa-video"></i> Meeting Recordings</h3>
+                        <div class="document-list">
+                            <div class="document-item">
+                                <div class="document-icon">
+                                <i class="fas fa-video"></i>
+                                </div>
+                                <div class="document-info">
+                                    <h4>Strategy Call #1</h4>
+                                    <p>March 1, 2024</p>
+                                </div>
+                                <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Strategy Calls Timeline -->
+            <section id="calls" class="dashboard-section">
+                <h2>Strategy Calls</h2>
+                <div class="calls-timeline">
+                    <div class="timeline-item completed">
+                        <div class="timeline-date">March 1, 2024</div>
+                        <div class="timeline-content">
+                            <h3>Initial Strategy Session</h3>
+                            <p>Sales funnel analysis and optimization planning</p>
+                            <div class="timeline-actions">
+                                <a href="#" class="btn-link"><i class="fas fa-video"></i> Recording</a>
+                                <a href="#" class="btn-link"><i class="fas fa-file-alt"></i> Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item upcoming">
+                        <div class="timeline-date">March 15, 2024</div>
+                        <div class="timeline-content">
+                            <h3>Marketing Strategy Review</h3>
+                            <p>Ad creative analysis and VSL optimization</p>
+                            <div class="timeline-actions">
+                                <button class="btn-primary">Join Call</button>
+                                <button class="btn-secondary">Reschedule</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Communication Hub -->
+            <section id="chat" class="dashboard-section">
+                <h2>Communication Hub</h2>
+                <div class="chat-container">
+                    <div class="chat-messages">
+                        <div class="message client">
+                            <div class="message-content">
+                                <p>I've uploaded the sales script for review. When can we discuss the feedback?</p>
+                            </div>
+                            <div class="message-time">2:30 PM</div>
+                        </div>
+                        <div class="message consultant">
+                            <div class="message-content">
+                                <p>I'll review it by tomorrow morning and we can discuss in our next call.</p>
+                            </div>
+                            <div class="message-time">2:35 PM</div>
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <textarea placeholder="Type your message..." rows="1"></textarea>
+                        <button class="btn-primary">Send</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Executive Summary -->
+            <section id="summary" class="dashboard-section">
+                <h2>Executive Summary</h2>
+                <div class="summary-container">
+                    <div class="summary-preview">
+                        <h3>Audit Progress Overview</h3>
+                        <div class="progress-metrics">
+                            <div class="metric">
+                                <span class="metric-value">40%</span>
+                                <span class="metric-label">Overall Progress</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">2/3</span>
+                                <span class="metric-label">Phases Started</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">5</span>
+                                <span class="metric-label">Documents Submitted</span>
+                            </div>
+                        </div>
+                        <div class="summary-actions">
+                            <button class="btn-primary">Download Full Report</button>
+                            <button class="btn-secondary">Book Next Steps Call</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html> 

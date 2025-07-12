@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | OfferLaunch</title>
+  <link rel="stylesheet" href="fanbasis-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon/OL fav.png">
+  <style>
+    html, body {
+      background: var(--background, #0A0A0A);
+      color: var(--text, #fff);
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-width: 100vw;
+      width: 100vw;
+      box-sizing: border-box;
+    }
+    body {
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+    }
+    .container {
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+    .logo {
+      margin-bottom: 3rem;
+    }
+    .logo img {
+      max-width: 200px;
+      height: auto;
+      display: block;
+    }
+    .thank-you-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .thank-you-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary, #FFE66D);
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+    .thank-you-message {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 3rem;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .social-link {
+      display: flex;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: rgba(255,255,255,0.1);
+      border: 2px solid var(--primary, #FFE66D);
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--primary, #FFE66D);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+    }
+    .social-link:hover {
+      background: var(--primary, #FFE66D);
+      color: var(--background, #0A0A0A);
+      transform: translateY(-2px);
+    }
+    .social-link svg {
+      width: 1.2em;
+      height: 1.2em;
+      margin-right: 0.5em;
+    }
+    @media (max-width: 700px) {
+      .thank-you-title { font-size: 2rem; }
+      .thank-you-message { font-size: 1.1rem; }
+      .social-links { 
+        flex-direction: column; 
+        gap: 1rem;
+        align-items: center;
+      }
+      .social-link { 
+        width: 200px;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="offer-launch-assets/Asset 2.png" alt="OfferLaunch Logo">
+    </div>
+    <div class="thank-you-content">
+      <h1 class="thank-you-title">Thank You!</h1>
+      <p class="thank-you-message">
+        We've received your application and will review your submission carefully. 
+        We'll be in touch soon with next steps.
+      </p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/theofferlaunch/" target="_blank" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          Instagram
+        </a>
+        <a href="https://www.youtube.com/@Howtoscaleyouroffer" target="_blank" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          YouTube
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

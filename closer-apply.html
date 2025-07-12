@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply: Experienced Closer | OfferLaunch</title>
+  <link rel="stylesheet" href="fanbasis-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon/OL fav.png">
+  <style>
+    html, body {
+      background: var(--background, #0A0A0A);
+      color: var(--text, #fff);
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-width: 100vw;
+      width: 100vw;
+      box-sizing: border-box;
+    }
+    body {
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow-x: hidden;
+    }
+    .logo-top {
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 2.5rem auto;
+    }
+    .logo-top img {
+      max-width: 180px;
+      height: auto;
+      display: block;
+    }
+    .culture-header {
+      width: 100vw;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .culture-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text, #fff);
+      margin-bottom: 0.7rem;
+      margin-top: 0;
+      letter-spacing: 1px;
+    }
+    .culture-underline {
+      width: 100%;
+      max-width: 300px;
+      height: 4px;
+      background: var(--primary, #FFE66D);
+      border-radius: 2px;
+      margin: 0 auto 1.2rem auto;
+    }
+    .culture-subtext {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.1rem;
+      font-weight: 500;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .hero {
+      width: 100vw;
+      margin: 0;
+      padding: 3rem 0 2.5rem 0;
+      background: var(--background, #0A0A0A);
+      text-align: center;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .main-heading {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text, #fff);
+      text-align: center;
+      margin-bottom: 2.2rem;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 700px;
+    }
+    .video-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+      width: 100vw;
+      box-sizing: border-box;
+    }
+    .video-aspect {
+      position: relative;
+      width: 100vw;
+      max-width: 900px;
+      aspect-ratio: 16/9;
+      background: #000;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    .video-aspect iframe {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%; border: 0;
+      border-radius: 18px;
+      background: #000;
+    }
+    .arrow-anim {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+      margin-top: -1.2rem;
+    }
+    .arrow-anim svg {
+      width: 48px;
+      height: 70px;
+      stroke: var(--primary, #FFE66D);
+      fill: none;
+      stroke-width: 4;
+      animation: bounce 1.2s infinite alternate;
+    }
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-18px); }
+    }
+    .watch-text {
+      text-align: center;
+      font-size: 1.15rem;
+      color: var(--primary, #FFE66D);
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      margin-top: 0.2rem;
+      letter-spacing: 0.5px;
+    }
+    .typeform-embed {
+      width: 100vw;
+      max-width: 900px;
+      margin: 2.5rem auto 3rem auto;
+      min-height: 600px;
+      background: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+    }
+    .typeform-embed > div[data-tf-live] {
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: 100% !important;
+    }
+    .arrow-watch-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      margin-bottom: 2rem;
+      margin-top: 0.5rem;
+      gap: 0.5em;
+    }
+    .arrow-anim {
+      display: flex;
+      align-items: baseline;
+      height: 1em;
+    }
+    .arrow-anim svg {
+      width: 1.1em;
+      height: 1.1em;
+      stroke: var(--primary, #FFE66D);
+      fill: none;
+      stroke-width: 2;
+      animation: bounce 0.8s infinite alternate;
+      display: inline-block;
+      vertical-align: baseline;
+      margin-bottom: -0.1em;
+    }
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-6px); }
+    }
+    .watch-text {
+      text-align: left;
+      font-size: 1.15rem;
+      color: var(--primary, #FFE66D);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+    }
+    @media (max-width: 900px) {
+      .video-aspect { max-width: 98vw; }
+    }
+    @media (max-width: 700px) {
+      .main-heading { font-size: 1.3rem; }
+      .video-aspect { height: auto; }
+      .typeform-embed { max-width: 98vw; height: 220px; }
+      .arrow-watch-row { gap: 0.4rem; }
+      .arrow-anim svg { width: 1.2em; height: 1.2em; }
+      .watch-text { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero" style="padding: 3rem 0 2.5rem 0; background: var(--background, #0A0A0A); text-align: center;">
+    <div class="logo-top" style="margin-bottom: 2.5rem;">
+      <img src="offer-launch-assets/Asset 2.png" alt="OfferLaunch Logo" style="max-width: 280px; width: 100%; height: auto;">
+    </div>
+    <div class="main-heading" style="margin-bottom: 2.2rem;">
+      <span style="display: block; font-size: 2.7rem; font-weight: 800; color: var(--primary, #FFE66D); letter-spacing: 1px; line-height: 1.1;">Ready to Close for a Category Leader?</span>
+      <span style="display: block; font-size: 1.25rem; font-weight: 500; color: rgba(255,255,255,0.92); margin-top: 1.1rem;">Step into a high-performance sales role with warm leads, big commissions, and real mentorship. If you're hungry to win and want to be part of a team that's rewriting the rules, you're in the right place.</span>
+    </div>
+    <div class="video-container">
+      <div class="video-aspect">
+        <iframe src="https://www.youtube.com/embed/YEnbtNnK4Io" title="OfferLaunch Closer Video" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="arrow-watch-row">
+      <span class="arrow-anim">
+        <svg viewBox="0 0 12 22">
+          <path d="M6 18 V6" />
+          <path d="M3 9 L6 6 L9 9" />
+        </svg>
+      </span>
+      <span class="watch-text">Watch this video before you apply</span>
+    </div>
+  </section>
+  <div class="typeform-embed">
+    <div data-tf-live="01JX096S7S5YAB22AREVGMBWVS"></div>
+  </div>
+  <script src="//embed.typeform.com/next/embed.js"></script>
+</body>
+</html> 
