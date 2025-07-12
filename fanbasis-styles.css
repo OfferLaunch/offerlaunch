@@ -140,6 +140,8 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    padding: 5px;
+    z-index: 1003;
 }
 
 .bar {
@@ -149,6 +151,7 @@ body {
     margin: 3px 0;
     transition: 0.3s;
     border-radius: 2px;
+    display: block;
 }
 
 /* Hero Section */
@@ -848,7 +851,10 @@ body {
     }
     
     .nav-toggle {
-        display: flex;
+        display: flex !important;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 5px;
+        padding: 8px;
     }
     
     .nav-link, .nav-cta {

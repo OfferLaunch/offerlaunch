@@ -11,8 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopPropagation();
             console.log('Hamburger clicked');
             
-            navMenu.classList.toggle('active');
-            console.log('Menu active:', navMenu.classList.contains('active'));
+            // Simple toggle for testing
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                console.log('Menu closed');
+            } else {
+                navMenu.classList.add('active');
+                console.log('Menu opened');
+            }
             
             // Animate hamburger menu
             const bars = navToggle.querySelectorAll('.bar');
