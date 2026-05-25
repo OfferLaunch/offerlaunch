@@ -2638,7 +2638,7 @@ button.btn-primary,
     height: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 38%;
     border-radius: 1rem;
 }
 
@@ -3465,17 +3465,19 @@ button.btn-primary,
     color: rgba(255, 255, 255, 0.5);
 }
 
-.apply-funnel__typeform {
-    width: 100%;
-    max-width: 40rem;
-    margin: 0 auto;
-    min-height: 600px;
+.apply-funnel__cta-wrap {
+    display: flex;
+    justify-content: center;
 }
 
-.apply-funnel__typeform > div[data-tf-live] {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
+.apply-funnel__cta {
+    min-height: 52px;
+    padding: 0 2.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    border: none;
 }
 
 .apply-funnel__legal {
