@@ -1419,9 +1419,9 @@ button.btn-primary,
 /* What Do We Do — features-11 bento grid */
 .features-bento {
     padding: 5rem 0;
-    background: rgba(255, 255, 255, 0.03);
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--background);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .features-bento__wrap {
@@ -1816,9 +1816,14 @@ button.btn-primary,
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 50%;
-    background: var(--background);
+    background: var(--primary);
     overflow: hidden;
     flex-shrink: 0;
+    transition: background 0.3s ease;
+}
+
+.hero-v2__announcement:hover .hero-v2__announcement-arrow {
+    background: var(--background);
 }
 
 .hero-v2__arrow-track {
@@ -1836,6 +1841,11 @@ button.btn-primary,
     width: 1.5rem;
     height: 1.5rem;
     padding: 0.35rem;
+    color: var(--background);
+    transition: color 0.3s ease;
+}
+
+.hero-v2__announcement:hover .hero-v2__arrow-track svg {
     color: var(--primary);
 }
 
@@ -1866,7 +1876,6 @@ button.btn-primary,
 
 .hero-v2__rotator {
     display: inline-block;
-    height: 1.12em;
     overflow: hidden;
     vertical-align: baseline;
     min-width: 10.5ch;
@@ -1882,8 +1891,9 @@ button.btn-primary,
 }
 
 .hero-v2__rotator-word {
-    height: 1.12em;
-    line-height: 1.12;
+    line-height: 1.2;
+    padding: 0.05em 0 0.12em;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2679,6 +2689,53 @@ button.btn-primary,
     transform: translateY(20px);
 }
 
+.feature-highlight__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0 2rem;
+    border-radius: 9999px;
+    background: var(--primary);
+    color: #000000;
+    -webkit-text-fill-color: #000000;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    text-shadow: none;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.4),
+        0 0 24px rgba(255, 255, 255, 0.2),
+        0 4px 16px rgba(0, 0, 0, 0.35);
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+.feature-highlight__btn:hover {
+    color: #000000;
+    -webkit-text-fill-color: #000000;
+    background: #fff0a8;
+    border-color: #ffffff;
+    box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.55),
+        0 0 32px rgba(255, 255, 255, 0.35),
+        0 6px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+}
+
+.feature-highlight__btn:active {
+    transform: translateY(0);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.5),
+        0 0 16px rgba(255, 255, 255, 0.2),
+        0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
 .feature-highlight__card.is-visible .feature-highlight__image {
     animation: feature-highlight-scale-in 0.8s ease-out forwards;
 }
@@ -3297,4 +3354,160 @@ button.btn-primary,
     .newsletter-btn {
         border-radius: 0 0 20px 20px;
     }
-} 
+}
+
+/* Apply funnel — /apply */
+.apply-funnel {
+    min-height: 100vh;
+    background: #000000;
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+}
+
+.apply-funnel__main {
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+    text-align: center;
+}
+
+.apply-funnel__logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    pointer-events: none;
+    user-select: none;
+}
+
+.apply-funnel__logo-img {
+    width: min(100%, 20rem);
+    height: auto;
+    display: block;
+}
+
+.apply-funnel__copy {
+    margin-bottom: 2rem;
+}
+
+.apply-funnel__headline {
+    margin: 0;
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    text-wrap: balance;
+}
+
+.apply-funnel__subheadline {
+    margin: 1.25rem auto 0;
+    max-width: 38rem;
+    font-size: clamp(1rem, 2.2vw, 1.125rem);
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.65);
+    text-wrap: balance;
+}
+
+.apply-funnel__vsl {
+    margin-bottom: 2.5rem;
+}
+
+.apply-funnel__vsl-inner {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+}
+
+.apply-funnel__vsl-inner iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.apply-funnel__vsl-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.apply-funnel__vsl-play {
+    font-size: 2.5rem;
+    color: rgba(255, 230, 109, 0.45);
+    line-height: 1;
+}
+
+.apply-funnel__vsl-label {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.apply-funnel__vsl-hint {
+    margin: 0;
+    max-width: 20rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.apply-funnel__cta-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.apply-funnel__cta {
+    min-height: 52px;
+    padding: 0 2.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    border: none;
+}
+
+.apply-funnel__legal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem 0.75rem;
+    padding: 1.5rem 1.25rem 2rem;
+    font-size: 0.8125rem;
+}
+
+.apply-funnel__legal a {
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+}
+
+.apply-funnel__legal a:hover {
+    color: var(--primary);
+}
+
+.apply-funnel__legal span {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 640px) {
+    .apply-funnel__main {
+        padding: 2rem 1.25rem 3rem;
+    }
+
+    .apply-funnel__logo {
+        margin-bottom: 2rem;
+    }
+}

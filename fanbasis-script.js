@@ -102,7 +102,10 @@ function initHeroWordRotator() {
     var wordHeight = 0;
 
     function measure() {
-        wordHeight = words[0].offsetHeight;
+        wordHeight = 0;
+        words.forEach(function(word) {
+            wordHeight = Math.max(wordHeight, word.scrollHeight);
+        });
         rotator.style.height = wordHeight + 'px';
         var maxWidth = 0;
         words.forEach(function(word) {
