@@ -910,7 +910,8 @@ button.btn-primary,
 .ethereal-section > .container,
 .ethereal-section > .feature-highlight__wrap,
 .ethereal-section > .hero-v2__inner,
-.ethereal-section > .features-v2 {
+.ethereal-section > .features-v2,
+.ethereal-section > .thank-you-page__wrap {
     position: relative;
     z-index: 2;
 }
@@ -3509,5 +3510,153 @@ button.btn-primary,
 
     .apply-funnel__logo {
         margin-bottom: 2rem;
+    }
+}
+
+/* Thank you — post-submission */
+.thank-you-page {
+    margin: 0;
+    background: #000000;
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+}
+
+.thank-you-page__hero.hero-v2 {
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+}
+
+.thank-you-page__wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 2rem;
+    text-align: center;
+}
+
+.thank-you-page__logo {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-bottom: 3rem;
+    padding-top: 0.5rem;
+    text-decoration: none;
+}
+
+.thank-you-page__logo-img {
+    width: auto;
+    height: 1.5rem;
+    max-width: 8.75rem;
+    display: block;
+}
+
+.thank-you-page__main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 0 1rem;
+}
+
+.thank-you-page__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1.75rem;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: 0 0 32px rgba(255, 230, 109, 0.25);
+}
+
+.thank-you-page__headline {
+    margin: 0;
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    text-wrap: balance;
+}
+
+.thank-you-page__message {
+    margin: 1.25rem 0 0;
+    font-size: clamp(1rem, 2.2vw, 1.125rem);
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.72);
+    text-wrap: balance;
+}
+
+.thank-you-page__contact {
+    margin: 2rem 0 0;
+    padding: 1.25rem 1.5rem;
+    max-width: 28rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.thank-you-page__email {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.thank-you-page__email:hover {
+    color: #fff0a8;
+}
+
+.thank-you-page__legal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem 0.75rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    font-size: 0.8125rem;
+}
+
+.thank-you-page__legal a {
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+}
+
+.thank-you-page__legal a:hover {
+    color: var(--primary);
+}
+
+.thank-you-page__legal span {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 640px) {
+    .thank-you-page__wrap {
+        padding: 2rem 1.25rem 1.5rem;
+    }
+
+    .thank-you-page__logo-img {
+        height: 1.35rem;
+    }
+
+    .thank-you-page__main {
+        padding: 1.5rem 0 0.75rem;
     }
 }
