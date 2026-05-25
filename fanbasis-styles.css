@@ -3480,6 +3480,75 @@ button.btn-primary,
     border: none;
 }
 
+body.apply-funnel-modal-open {
+    overflow: hidden;
+}
+
+.apply-funnel-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.apply-funnel-modal[hidden] {
+    display: none;
+}
+
+.apply-funnel-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.apply-funnel-modal__panel {
+    position: relative;
+    z-index: 1;
+    width: min(95vw, 56rem);
+    max-height: 95vh;
+    overflow: auto;
+    border-radius: 0.75rem;
+    background: #0a0a0a;
+}
+
+.apply-funnel-modal__close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.apply-funnel-modal__close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.apply-funnel-modal__embed {
+    width: 100%;
+    min-height: 600px;
+}
+
+.apply-funnel-modal__embed > div[data-tf-live] {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+}
+
 .apply-funnel__legal {
     display: flex;
     flex-wrap: wrap;

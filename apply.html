@@ -43,10 +43,8 @@
     <div class="apply-funnel__cta-wrap">
       <button
         type="button"
+        id="apply-typeform-open"
         class="btn-liquid btn-liquid--primary apply-funnel__cta"
-        data-tf-popup="01JZY51KHDGWN5F8SH8HBHPC0E"
-        data-tf-opacity="80"
-        data-tf-size="95"
       >
         BOOK A CALL
       </button>
@@ -58,6 +56,16 @@
     <span aria-hidden="true">·</span>
     <a href="/terms">Terms of Service</a>
   </footer>
+
+  <div class="apply-funnel-modal" id="apply-typeform-modal" hidden aria-hidden="true">
+    <div class="apply-funnel-modal__backdrop" data-close-modal></div>
+    <div class="apply-funnel-modal__panel" role="dialog" aria-modal="true" aria-label="Book a call">
+      <button type="button" class="apply-funnel-modal__close" data-close-modal aria-label="Close form">&times;</button>
+      <div class="apply-funnel-modal__embed typeform-embed">
+        <div data-tf-live="01JZY51KHDGWN5F8SH8HBHPC0E"></div>
+      </div>
+    </div>
+  </div>
 
   <script src="//embed.typeform.com/next/embed.js"></script>
   <script src="fanbasis-script.js"></script>
