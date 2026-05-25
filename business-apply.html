@@ -21,10 +21,7 @@
     body {
       min-height: 100vh;
       width: 100vw;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
+      display: block;
       overflow-x: hidden;
     }
     .logo-top {
@@ -100,23 +97,40 @@
     }
     .video-aspect {
       position: relative;
-      width: 100vw;
+      width: 100%;
       max-width: 900px;
       aspect-ratio: 16/9;
-      background: #000;
+      background: rgba(255, 255, 255, 0.04);
+      border: 2px dashed rgba(255, 230, 109, 0.35);
       border-radius: 18px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.25);
       overflow: hidden;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       margin: 0 auto;
+      gap: 0.75rem;
+      padding: 2rem;
+      box-sizing: border-box;
     }
-    .video-aspect iframe {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%; border: 0;
-      border-radius: 18px;
-      background: #000;
+    .video-placeholder-icon {
+      font-size: 3rem;
+      color: rgba(255, 230, 109, 0.5);
+      line-height: 1;
+    }
+    .video-placeholder-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary, #FFE66D);
+      margin: 0;
+    }
+    .video-placeholder-text {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.55);
+      margin: 0;
+      text-align: center;
+      max-width: 320px;
     }
     .arrow-anim {
       display: flex;
@@ -212,18 +226,48 @@
     }
   </style>
 </head>
-<body>
-  <section class="hero" style="padding: 3rem 0 2.5rem 0; background: var(--background, #0A0A0A); text-align: center;">
-    <div class="logo-top" style="margin-bottom: 2.5rem;">
-      <img src="offer-launch-assets/Asset 2.png" alt="OfferLaunch Logo" style="max-width: 280px; width: 100%; height: auto;">
-    </div>
+<body class="apply-page">
+  <div class="site-header-sticky">
+    <header class="site-header" id="site-header">
+      <nav class="site-header__nav">
+        <a href="index" class="site-header__logo" aria-label="OfferLaunch home">
+          <img src="offer-launch-assets/Asset 2.png" alt="OfferLaunch" class="site-header__logo-img" width="176" height="32">
+        </a>
+        <div class="site-header__desktop">
+          <a href="index#pillars" class="site-header__link">Consulting</a>
+          <a href="index#about" class="site-header__link">About</a>
+          <a href="business-apply" class="site-header__btn site-header__btn--primary">Get Started</a>
+        </div>
+        <button type="button" class="site-header__menu-btn" id="site-header-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="site-header-mobile">
+          <svg class="menu-toggle-icon" width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path class="menu-toggle-icon__path-a" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+            <path d="M7 16 27 16"></path>
+          </svg>
+        </button>
+      </nav>
+      <div class="site-header__mobile" id="site-header-mobile" hidden>
+        <div class="site-header__mobile-inner" data-slot="closed">
+          <div class="site-header__mobile-links">
+            <a href="index#pillars" class="site-header__mobile-link">Consulting</a>
+            <a href="index#about" class="site-header__mobile-link">About</a>
+          </div>
+          <div class="site-header__mobile-actions">
+            <a href="business-apply" class="site-header__btn site-header__btn--primary site-header__btn--block">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <section class="hero" style="padding: 2rem 0 2.5rem 0; background: var(--background, #0A0A0A); text-align: center;">
     <div class="main-heading" style="margin-bottom: 2.2rem;">
       <span style="display: block; font-size: 2.7rem; font-weight: 800; color: var(--primary, #FFE66D); letter-spacing: 1px; line-height: 1.1;">Ready to Scale Your Business?</span>
       <span style="display: block; font-size: 1.25rem; font-weight: 500; color: rgba(255,255,255,0.92); margin-top: 1.1rem;">Submit your offer and let our team of experts help you scale your business to new heights. We're looking for founders who are ready to partner with the best growth team in the space.</span>
     </div>
     <div class="video-container">
-      <div class="video-aspect">
-        <iframe src="https://www.youtube.com/embed/w4LeqbJC4Ls" title="OfferLaunch Business Partnership Video" frameborder="0" allowfullscreen></iframe>
+      <div class="video-aspect" aria-label="Video placeholder">
+        <span class="video-placeholder-icon" aria-hidden="true">▶</span>
+        <p class="video-placeholder-title">Video coming soon</p>
+        <p class="video-placeholder-text">A walkthrough of the partnership process will be available here. In the meantime, complete the application below.</p>
       </div>
     </div>
     <div class="arrow-watch-row">
@@ -233,12 +277,13 @@
           <path d="M3 9 L6 6 L9 9" />
         </svg>
       </span>
-      <span class="watch-text">Watch this video before you apply</span>
+      <span class="watch-text">Complete the application below</span>
     </div>
   </section>
-      <div class="typeform-embed">
+  <div class="typeform-embed">
       <div data-tf-live="01JZY51KHDGWN5F8SH8HBHPC0E"></div>
     </div>
     <script src="//embed.typeform.com/next/embed.js"></script>
+    <script src="fanbasis-script.js"></script>
 </body>
 </html> 

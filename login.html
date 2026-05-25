@@ -4,23 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OfferLaunch - Login</title>
+    <link rel="stylesheet" href="fanbasis-styles.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon/OL fav.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="sticky-nav">
-            <a href="index.html" class="logo">
-                <img src="offer-launch-assets/Asset 1.png" alt="Offer Launch Logo">
-            </a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="index.html#features">Features</a>
-                <a href="index.html#pricing">Pricing</a>
+    <div class="site-header-sticky">
+        <header class="site-header" id="site-header">
+            <nav class="site-header__nav">
+                <a href="index" class="site-header__logo" aria-label="OfferLaunch home">
+                    <img src="offer-launch-assets/Asset 2.png" alt="OfferLaunch" class="site-header__logo-img" width="176" height="32">
+                </a>
+                <div class="site-header__desktop">
+                    <a href="index#pillars" class="site-header__link">Consulting</a>
+                    <a href="index#about" class="site-header__link">About</a>
+                    <a href="business-apply" class="site-header__btn site-header__btn--primary">Get Started</a>
+                </div>
+                <button type="button" class="site-header__menu-btn" id="site-header-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="site-header-mobile">
+                    <svg class="menu-toggle-icon" width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path class="menu-toggle-icon__path-a" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                        <path d="M7 16 27 16"></path>
+                    </svg>
+                </button>
+            </nav>
+            <div class="site-header__mobile" id="site-header-mobile" hidden>
+                <div class="site-header__mobile-inner" data-slot="closed">
+                    <div class="site-header__mobile-links">
+                        <a href="index#pillars" class="site-header__mobile-link">Consulting</a>
+                        <a href="index#about" class="site-header__mobile-link">About</a>
+                    </div>
+                    <div class="site-header__mobile-actions">
+                        <a href="business-apply" class="site-header__btn site-header__btn--primary site-header__btn--block">Get Started</a>
+                    </div>
+                </div>
             </div>
-        </nav>
-    </header>
+        </header>
+    </div>
 
     <main class="login-page">
         <div class="login-container">
@@ -62,12 +83,13 @@
                 </form>
 
                 <div class="login-footer">
-                    <p>Don't have an account? <a href="index.html#pricing">Get started with OfferLaunch</a></p>
+                    <p>Don't have an account? <a href="business-apply">Get started with OfferLaunch</a></p>
                 </div>
             </div>
         </div>
     </main>
 
+    <script src="fanbasis-script.js"></script>
     <script>
         // Toggle password visibility
         const togglePassword = document.querySelector('.toggle-password');
