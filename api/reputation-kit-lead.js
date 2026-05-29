@@ -30,11 +30,20 @@ export default async function handler(req, res) {
       tags: body.tags || ['reputation-kit-lead'],
     };
 
-    const ghlRes = await fetch(webhookUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+
+    let ghlRes;
+    try {
+      ghlRes = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        signal: controller.signal,
+      });
+    } finally {
+      clearTimeout(timeout);
+    }
 
     if (!ghlRes.ok) {
       const text = await ghlRes.text();
@@ -43,6 +52,9 @@ export default async function handler(req, res) {
 
     return res.status(200).json({ ok: true });
   } catch (err) {
+    if (err && err.name === 'AbortError') {
+      return res.status(504).json({ error: 'GoHighLevel webhook timed out' });
+    }
     return res.status(500).json({ error: 'Server error', detail: String(err) });
   }
 }

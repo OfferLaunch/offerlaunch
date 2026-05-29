@@ -99,28 +99,42 @@
     };
   }
 
-  async function sendToGhl(stage, lead) {
+  async function sendToGhl(stage, lead, timeoutMs) {
     var cfg = config();
     var endpoint = cfg.leadApi || '/api/reputation-kit-lead';
     var payload = buildPayload(stage, lead);
+    var ms = timeoutMs || 15000;
+    var controller = new AbortController();
+    var timeoutId = setTimeout(function () {
+      controller.abort();
+    }, ms);
 
-    var res = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-      keepalive: true,
-    });
+    try {
+      var res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        signal: controller.signal,
+      });
 
-    if (!res.ok) {
-      var errBody = null;
-      try {
-        errBody = await res.json();
-      } catch (e) { /* ignore */ }
-      var message = (errBody && errBody.error) || 'Could not save your information. Please try again.';
-      throw new Error(message);
+      if (!res.ok) {
+        var errBody = null;
+        try {
+          errBody = await res.json();
+        } catch (e) { /* ignore */ }
+        var message = (errBody && errBody.error) || 'Could not save your information. Please try again.';
+        throw new Error(message);
+      }
+
+      return true;
+    } catch (err) {
+      if (err && err.name === 'AbortError') {
+        throw new Error('Request timed out. Please try again or continue to checkout.');
+      }
+      throw err;
+    } finally {
+      clearTimeout(timeoutId);
     }
-
-    return true;
   }
 
   function applyWhopPrefill(lead) {
@@ -234,10 +248,24 @@
       submitBtn.disabled = true;
       submitBtn.textContent = 'Saving…';
 
+      var ghlSaved = false;
       try {
         await sendToGhl('optin', lead);
+        ghlSaved = true;
+      } catch (ghlErr) {
+        if (errorEl) {
+          errorEl.textContent = (ghlErr && ghlErr.message)
+            ? ghlErr.message + ' You can still complete checkout below.'
+            : 'Could not reach our server. You can still complete checkout below.';
+          errorEl.hidden = false;
+        }
+      }
+
+      try {
         saveLead(lead);
-        trackLead();
+        if (ghlSaved) {
+          trackLead();
+        }
         trackInitiateCheckout();
         configureWhopEmbed(lead);
 
@@ -254,8 +282,10 @@
           block: 'nearest',
         });
       } catch (err) {
-        errorEl.textContent = err.message || 'Something went wrong. Please try again.';
-        errorEl.hidden = false;
+        if (errorEl) {
+          errorEl.textContent = err.message || 'Something went wrong. Please try again.';
+          errorEl.hidden = false;
+        }
         submitBtn.disabled = false;
         submitBtn.textContent = 'Continue to checkout';
       }
