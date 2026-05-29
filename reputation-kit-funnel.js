@@ -123,12 +123,26 @@
     return true;
   }
 
-  function applyWhopPrefill(email) {
+  function applyWhopPrefill(lead) {
     var embed = document.getElementById('whop-checkout-embed');
-    if (!embed || !email) return;
-    embed.setAttribute('data-whop-checkout-prefill-email', email);
-    if (global.wco && typeof global.wco.setEmail === 'function') {
-      global.wco.setEmail(email);
+    if (!embed || !lead) return;
+
+    var email = lead.email || '';
+    var name = lead.full_name || '';
+
+    if (email) {
+      embed.setAttribute('data-whop-checkout-prefill-email', email);
+    }
+    if (name) {
+      embed.setAttribute('data-whop-checkout-prefill-name', name);
+    }
+
+    // wco.setEmail(embedId, email) — first arg is the div id, NOT the email
+    var embedId = embed.id;
+    if (embedId && email && global.wco && typeof global.wco.setEmail === 'function') {
+      try {
+        global.wco.setEmail(embedId, email);
+      } catch (e) { /* prefill attributes are enough */ }
     }
   }
 
@@ -168,7 +182,7 @@
     embed.setAttribute('data-whop-checkout-return-url', returnUrl.toString());
     embed.setAttribute('data-whop-checkout-theme', 'light');
     embed.setAttribute('data-whop-checkout-hide-price', 'true');
-    applyWhopPrefill(lead.email);
+    applyWhopPrefill(lead);
   }
 
   function initHeroLeadForm() {
