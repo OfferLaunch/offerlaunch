@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Strategy Call | OfferLaunch</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="fanbasis-styles.css">
+  <link rel="stylesheet" href="reputation-kit-funnel-pages.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon/OL fav.png">
+  <script>
+    if (typeof fbq === 'function') {
+      fbq('track', 'Purchase');
+    }
+  </script>
+</head>
+<body class="rk-step-page">
+  <header class="rk-topbar">
+    <a href="/" aria-label="OfferLaunch home">
+      <img src="offer-launch-assets/Asset 2.png" alt="OfferLaunch" width="140" height="25">
+    </a>
+  </header>
+
+  <main class="rk-shell">
+    <div class="rk-book-hero">
+      <div class="rk-book-icon" aria-hidden="true">✓</div>
+      <p class="rk-eyebrow">You're in</p>
+      <h1 class="rk-title">Book your free business strategy call</h1>
+      <p class="rk-sub">Your kit access is on the way. Pick a time below so our team can map the fastest path to Page 1 for your business.</p>
+    </div>
+
+    <div class="rk-card">
+      <div class="typeform-embed" id="rk-typeform-wrap">
+        <div data-tf-live="" id="rk-typeform-embed"></div>
+      </div>
+      <p class="rk-secure">Submissions flow to our GoHighLevel workspace automatically.</p>
+    </div>
+
+    <footer class="rk-footer">
+      <p>Questions? <a href="mailto:team@offerlaunch.ai">team@offerlaunch.ai</a></p>
+      <p><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
+    </footer>
+  </main>
+
+  <script src="reputation-kit-config.js"></script>
+  <script src="reputation-kit-funnel.js"></script>
+  <script src="//embed.typeform.com/next/embed.js"></script>
+  <script>
+  (function () {
+    var cfg = window.REPUTATION_KIT_CONFIG || {};
+    var lead = window.ReputationKitFunnel.resolveLead() || window.ReputationKitFunnel.paramsFromUrl() || {};
+    var typeformId = cfg.typeformLiveId;
+
+    if (lead && lead.email) {
+      window.ReputationKitFunnel.saveLead(lead);
+      window.ReputationKitFunnel.sendToGhl('purchase_complete', lead).catch(function () { /* non-blocking */ });
+    }
+
+    var embedHost = document.getElementById('rk-typeform-embed');
+    if (!typeformId || typeformId.indexOf('REPLACE') === 0) {
+      embedHost.outerHTML = '<p style="margin:0;">Paste your Typeform live ID in <code>reputation-kit-config.js</code> (same form GHL already receives).</p>';
+      return;
+    }
+
+    embedHost.setAttribute('data-tf-live', typeformId);
+
+    var hidden = [];
+    if (lead.email) hidden.push('email=' + encodeURIComponent(lead.email));
+    if (lead.full_name) hidden.push('name=' + encodeURIComponent(lead.full_name));
+    if (lead.phone) hidden.push('phone=' + encodeURIComponent(lead.phone));
+    if (hidden.length) {
+      embedHost.setAttribute('data-tf-hidden', hidden.join(','));
+    }
+  })();
+  </script>
+</body>
+</html>
