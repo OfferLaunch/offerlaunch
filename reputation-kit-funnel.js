@@ -205,8 +205,8 @@
 
     var errorEl = document.getElementById('funnel-lead-error');
     var submitBtn = document.getElementById('funnel-lead-submit');
-    var whopWrap = document.getElementById('funnel-whop-wrap');
-    var secureNote = document.getElementById('funnel-lead-secure');
+    var cfg = config();
+    var checkoutPath = cfg.checkoutPath || '/reputation-kit-checkout';
 
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
@@ -221,18 +221,24 @@
       var phoneDigits = normalizePhone(phoneRaw);
 
       if (!fullName || fullName.length < 2) {
-        errorEl.textContent = 'Please enter your full name.';
-        errorEl.hidden = false;
+        if (errorEl) {
+          errorEl.textContent = 'Please enter your full name.';
+          errorEl.hidden = false;
+        }
         return;
       }
       if (!email || email.indexOf('@') === -1) {
-        errorEl.textContent = 'Please enter a valid email address.';
-        errorEl.hidden = false;
+        if (errorEl) {
+          errorEl.textContent = 'Please enter a valid email address.';
+          errorEl.hidden = false;
+        }
         return;
       }
       if (!phoneDigits) {
-        errorEl.textContent = 'Please enter a valid phone number (at least 10 digits).';
-        errorEl.hidden = false;
+        if (errorEl) {
+          errorEl.textContent = 'Please enter a valid phone number (at least 10 digits).';
+          errorEl.hidden = false;
+        }
         return;
       }
 
@@ -248,48 +254,47 @@
       submitBtn.disabled = true;
       submitBtn.textContent = 'Saving…';
 
-      var ghlSaved = false;
       try {
         await sendToGhl('optin', lead);
-        ghlSaved = true;
-      } catch (ghlErr) {
-        if (errorEl) {
-          errorEl.textContent = (ghlErr && ghlErr.message)
-            ? ghlErr.message + ' You can still complete checkout below.'
-            : 'Could not reach our server. You can still complete checkout below.';
-          errorEl.hidden = false;
-        }
-      }
-
-      try {
         saveLead(lead);
-        if (ghlSaved) {
-          trackLead();
-        }
+        trackLead();
         trackInitiateCheckout();
-        configureWhopEmbed(lead);
-
-        form.querySelectorAll('input').forEach(function (input) {
-          input.readOnly = true;
-        });
-        submitBtn.hidden = true;
-        if (secureNote) secureNote.hidden = true;
-
-        whopWrap.hidden = false;
-        whopWrap.setAttribute('aria-hidden', 'false');
-        whopWrap.scrollIntoView({
-          behavior: global.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
-          block: 'nearest',
-        });
+        global.location.href = pathWithQuery(checkoutPath, lead);
       } catch (err) {
         if (errorEl) {
-          errorEl.textContent = err.message || 'Something went wrong. Please try again.';
+          errorEl.textContent = (err && err.message)
+            ? err.message
+            : 'Something went wrong. Please try again.';
           errorEl.hidden = false;
         }
         submitBtn.disabled = false;
         submitBtn.textContent = 'Continue to checkout';
       }
     });
+  }
+
+  function initCheckoutPage() {
+    var cfg = config();
+    var funnelPath = cfg.funnelPath || '/reputation-kit#funnel-checkout';
+    var lead = resolveLead();
+
+    if (!lead || !lead.email) {
+      global.location.replace(funnelPath);
+      return;
+    }
+
+    var summary = document.getElementById('rk-checkout-summary');
+    var nameEl = document.getElementById('rk-checkout-name');
+    var emailEl = document.getElementById('rk-checkout-email');
+
+    if (summary && nameEl && emailEl) {
+      nameEl.textContent = lead.full_name || 'Your order';
+      emailEl.textContent = lead.email;
+      summary.hidden = false;
+    }
+
+    configureWhopEmbed(lead);
+    trackInitiateCheckout();
   }
 
   global.ReputationKitFunnel = {
@@ -307,6 +312,7 @@
     normalizePhone: normalizePhone,
     configureWhopEmbed: configureWhopEmbed,
     initHeroLeadForm: initHeroLeadForm,
+    initCheckoutPage: initCheckoutPage,
     buildQuery: buildQuery,
     config: config,
   };

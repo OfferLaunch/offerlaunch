@@ -12,6 +12,7 @@ window.REPUTATION_KIT_CONFIG = {
   whopPlanId: 'plan_REPLACE_WITH_YOUR_WHOP_PLAN_ID',
   typeformLiveId: 'REPLACE_WITH_YOUR_TYPEFORM_LIVE_ID',
   bookPath: '/reputation-kit-book',
+  checkoutPath: '/reputation-kit-checkout',
   funnelPath: '/reputation-kit#funnel-checkout',
   productName: "The Reputation Operator's Kit",
   priceDisplay: '$197',

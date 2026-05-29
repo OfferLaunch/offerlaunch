@@ -2,11 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0;url=/reputation-kit#funnel-checkout">
-  <title>Redirecting…</title>
-  <script>window.location.replace('/reputation-kit#funnel-checkout');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Checkout | The Reputation Operator's Kit</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="fanbasis-styles.css">
+  <link rel="stylesheet" href="reputation-kit-funnel-pages.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon/OL fav.png">
+  <script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
 </head>
-<body>
-  <p><a href="/reputation-kit#funnel-checkout">Go to checkout</a></p>
+<body class="rk-step-page">
+  <header class="rk-topbar">
+    <a href="/reputation-kit" aria-label="OfferLaunch home">
+      <img src="offer-launch-assets/Asset 2.png" alt="OfferLaunch" width="140" height="25">
+    </a>
+  </header>
+
+  <main class="rk-shell">
+    <h1 class="rk-title">Complete your order</h1>
+    <p class="rk-sub">Secure checkout for The Reputation Operator's Kit — $197 one-time.</p>
+
+    <div class="rk-card">
+      <p class="rk-price">Only <s>$497</s> <strong>$197</strong> · Instant delivery</p>
+
+      <div class="rk-lead-summary" id="rk-checkout-summary" hidden>
+        <strong id="rk-checkout-name"></strong>
+        <span id="rk-checkout-email"></span>
+      </div>
+
+      <div
+        id="whop-checkout-embed"
+        role="region"
+        aria-label="Checkout"
+        data-whop-checkout-theme="light"
+        data-whop-checkout-hide-price="true"
+      ></div>
+
+      <p class="rk-secure">🔒 256-bit encrypted checkout powered by Whop</p>
+    </div>
+
+    <footer class="rk-footer">
+      <p><a href="/reputation-kit#funnel-checkout">← Edit your details</a></p>
+      <p><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
+    </footer>
+  </main>
+
+  <script src="reputation-kit-config.js"></script>
+  <script src="reputation-kit-funnel.js"></script>
+  <script>
+    window.ReputationKitFunnel.initCheckoutPage();
+  </script>
 </body>
 </html>

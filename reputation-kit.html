@@ -36,7 +36,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon/OL fav.png">
     <link rel="canonical" href="https://offerlaunch.ai/reputation-kit">
-    <script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
     <style>
         /* Scoped tokens — inherit from fanbasis-styles :root, no overrides */
         .funnel-page {
@@ -389,19 +388,6 @@
             font-size: 0.8125rem;
             font-weight: 600;
             color: #b42318;
-        }
-
-        .funnel-whop-wrap {
-            margin-top: 0.75rem;
-        }
-
-        .funnel-whop-wrap[hidden] {
-            display: none;
-        }
-
-        #whop-checkout-embed {
-            min-height: 10rem;
-            margin-top: 0.5rem;
         }
 
         .funnel-checkout-band .funnel-offer-card {
@@ -973,12 +959,7 @@
                             <button type="submit" class="funnel-btn funnel-btn--in-card" id="funnel-lead-submit">Continue to checkout</button>
                         </form>
 
-                        <div class="funnel-whop-wrap" id="funnel-whop-wrap" hidden aria-hidden="true">
-                            <p class="funnel-offer-card__note" style="margin-top:0.75rem;font-weight:700;">Secure checkout</p>
-                            <div id="whop-checkout-embed" role="region" aria-label="Checkout"></div>
-                        </div>
-
-                        <p class="funnel-secure" id="funnel-lead-secure">🔒 Your info is saved securely · Whop checkout below after you continue</p>
+                        <p class="funnel-secure">🔒 Your info is saved securely · Checkout on the next page</p>
                     </div>
                 </div>
 
@@ -1330,8 +1311,8 @@
                     <p class="funnel-price-big">Only <s>$497.00</s> <strong>$197</strong></p>
                     <p class="funnel-save-line">(Save $300 today)</p>
                     <p class="funnel-offer-card__note">Get the kit for <s>$497</s> just $197 · Instant delivery</p>
-                    <a href="#funnel-checkout" class="funnel-btn funnel-btn--in-card">Continue — Get Access For $197</a>
-                    <p class="funnel-secure">🔒 Enter your details in the form above to checkout</p>
+                    <a href="#funnel-checkout" class="funnel-btn funnel-btn--in-card">Get Access — $197</a>
+                    <p class="funnel-secure">🔒 Enter your details in the form above</p>
                 </div>
             </div>
         </section>
