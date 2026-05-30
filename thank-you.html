@@ -32,17 +32,122 @@
       </a>
 
       <main class="thank-you-page__main">
-        <div class="thank-you-page__icon" aria-hidden="true">✓</div>
+        <section class="rk-confirm-wrap">
 
-        <h1 class="thank-you-page__headline">Thanks for submitting</h1>
-        <p class="thank-you-page__message">
-          Someone from our team will be in contact soon.
-        </p>
+          <div class="rk-confirm" aria-labelledby="rk-confirm-title">
+            <div class="rk-confirm__check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
 
-        <p class="thank-you-page__contact">
-          For any urgent questions, please reach out to
-          <a href="mailto:team@offerlaunch.ai" class="thank-you-page__email">team@offerlaunch.ai</a>.
-        </p>
+            <p class="rk-confirm__eyebrow">Application Received · Call Confirmed</p>
+            <h1 id="rk-confirm-title" class="rk-confirm__title">
+              You're booked<span data-rk-firstname-suffix>, <span data-rk-firstname>operator</span></span>.
+            </h1>
+            <p class="rk-confirm__sub">
+              Your 30-minute call with Dawson is locked in.
+              Treat it like a real meeting — the people who show up prepared get the most out of it.
+            </p>
+
+            <div class="rk-confirm__details">
+              <div class="rk-confirm__row">
+                <span class="rk-confirm__label">When</span>
+                <span class="rk-confirm__value" data-rk-time-full>Check your email for the time</span>
+              </div>
+              <div class="rk-confirm__row">
+                <span class="rk-confirm__label">Where</span>
+                <span class="rk-confirm__value">
+                  <a href="#" data-rk-meeting-link target="_blank" rel="noopener" data-rk-link-fallback="#">Join Google Meet →</a>
+                </span>
+              </div>
+              <div class="rk-confirm__row">
+                <span class="rk-confirm__label">Duration</span>
+                <span class="rk-confirm__value">30 minutes</span>
+              </div>
+              <div class="rk-confirm__row">
+                <span class="rk-confirm__label">With</span>
+                <span class="rk-confirm__value">Dawson Gant</span>
+              </div>
+            </div>
+
+          </div>
+
+          <section class="rk-prep" aria-labelledby="rk-prep-title">
+            <h2 id="rk-prep-title" class="rk-section-title">Before the call — do this</h2>
+            <ol class="rk-prep__list">
+              <li>
+                <span class="rk-prep__num" aria-hidden="true">1</span>
+                <div>
+                  <strong>Have your numbers in front of you.</strong>
+                  <p>Dawson will ask. Bring: last 90 days of revenue, average customer value, monthly ad spend (if you run paid), team headcount, and your current biggest constraint.</p>
+                </div>
+              </li>
+              <li>
+                <span class="rk-prep__num" aria-hidden="true">2</span>
+                <div>
+                  <strong>Be honest about what's actually broken.</strong>
+                  <p>The more direct you are in the first 5 minutes, the more value you'll get out of the next 25. This isn't a pitch — it's an operator-to-operator working session.</p>
+                </div>
+              </li>
+              <li>
+                <span class="rk-prep__num" aria-hidden="true">3</span>
+                <div>
+                  <strong>Decide what you'd want if it's a fit.</strong>
+                  <p>Retainer ($10–20K/month for Dawson and his team) or performance-based (smaller upfront + a percentage of growth). You don't have to commit on the call, but knowing your preference saves time.</p>
+                </div>
+              </li>
+            </ol>
+          </section>
+
+          <section class="rk-expect">
+            <h2 class="rk-section-title">What the call looks like</h2>
+            <div class="rk-timeline">
+              <div class="rk-timeline__step">
+                <span class="rk-timeline__time">First 5 min</span>
+                <p>Dawson has already read your application. You skip the small talk. You tell him what's actually broken, in your own words.</p>
+              </div>
+              <div class="rk-timeline__step">
+                <span class="rk-timeline__time">Next 15–20 min</span>
+                <p>Diagnosis. Find the pillar — marketing, sales, operations, or hiring — that's actually your ceiling, and the 2–3 highest-leverage moves to break through it.</p>
+              </div>
+              <div class="rk-timeline__step">
+                <span class="rk-timeline__time">Last 5–10 min</span>
+                <p>If it's a fit on both sides, you'll talk about how you'd work together. If not, Dawson tells you straight. Either way, you leave with a real plan.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="rk-reminders">
+            <h2 class="rk-section-title">What happens next</h2>
+            <ul class="rk-reminders__list">
+              <li><span class="rk-reminders__dot" aria-hidden="true"></span>Calendar invite + confirmation email already on the way (check your inbox in the next 5 minutes — including spam, just in case).</li>
+              <li><span class="rk-reminders__dot" aria-hidden="true"></span>Reminder email 24 hours before the call.</li>
+              <li><span class="rk-reminders__dot" aria-hidden="true"></span>SMS reminder 1 hour before with the live Google Meet link.</li>
+              <li><span class="rk-reminders__dot" aria-hidden="true"></span>One final SMS 5 minutes before — Dawson's heading in.</li>
+            </ul>
+          </section>
+
+          <p class="rk-confirm-note">
+            Need to reach us before the call? Email
+            <a href="mailto:team@offerlaunch.ai">team@offerlaunch.ai</a> — real person, fast response.
+          </p>
+
+        </section>
+
+        <div class="thank-you-page__legacy">
+          <div class="thank-you-page__icon" aria-hidden="true">✓</div>
+
+          <h2 class="thank-you-page__headline">Thanks for submitting</h2>
+          <p class="thank-you-page__message">
+            Someone from our team will be in contact soon.
+          </p>
+
+          <p class="thank-you-page__contact">
+            For any urgent questions, please reach out to
+            <a href="mailto:team@offerlaunch.ai" class="thank-you-page__email">team@offerlaunch.ai</a>.
+          </p>
+        </div>
       </main>
 
       <footer class="thank-you-page__legal">
@@ -53,6 +158,7 @@
     </div>
   </section>
 
+  <script src="thank-you-confirm.js"></script>
   <script src="fanbasis-script.js"></script>
 </body>
 </html>

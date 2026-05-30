@@ -379,14 +379,17 @@
   min-height: 420px;
 }
 
-/* Modal: no gap below Typeform */
+/* Modal Typeform: full height (same as business-apply / apply.html) */
 .apply-funnel-modal .typeform-embed,
 .apply-funnel-modal__embed.typeform-embed {
-  min-height: 0;
+  width: 100%;
+  min-height: min(600px, 82vh);
 }
 
 .apply-funnel-modal__embed > div[data-tf-live] {
-  min-height: 0 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
 }
 
 .rk-footer {

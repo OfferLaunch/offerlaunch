@@ -45,22 +45,46 @@
   function paramsFromUrl() {
     var params = new URLSearchParams(global.location.search);
     var fullName = params.get('name') || params.get('full_name') || '';
+    var first = (params.get('first_name') || params.get('firstname') || '').trim();
+    var last = (params.get('last_name') || params.get('lastname') || '').trim();
     var email = params.get('email') || '';
-    if (!fullName && !email) return null;
+    var phone = params.get('phone') || '';
+
+    if (!fullName && (first || last)) {
+      fullName = (first + ' ' + last).trim();
+    }
+
+    if (!fullName && !email && !phone && !first && !last) return null;
+
     var parts = parseFullName(fullName);
+    if (first) parts.first_name = first;
+    if (last) parts.last_name = last;
+
     return {
       full_name: parts.full_name,
       first_name: parts.first_name,
       last_name: parts.last_name,
       email: normalizeEmail(email),
-      phone: params.get('phone') || '',
+      phone: phone,
     };
+  }
+
+  function appendMarketingParams(q) {
+    var pageParams = new URLSearchParams(global.location.search);
+    pageParams.forEach(function (value, key) {
+      if (!value) return;
+      if (key.indexOf('utm_') === 0 || key === 'gclid' || key === 'fbclid') {
+        q.set(key, value);
+      }
+    });
   }
 
   function resolveLead() {
     var fromUrl = paramsFromUrl();
-    if (fromUrl && fromUrl.email) {
-      saveLead(fromUrl);
+    if (fromUrl) {
+      if (fromUrl.email || fromUrl.first_name || fromUrl.phone) {
+        saveLead(fromUrl);
+      }
       return fromUrl;
     }
     return loadLead();
@@ -68,14 +92,46 @@
 
   function buildQuery(lead, extra) {
     var q = new URLSearchParams();
-    if (lead.full_name) q.set('name', lead.full_name);
-    if (lead.email) q.set('email', lead.email);
-    if (lead.phone) q.set('phone', lead.phone);
+    if (lead) {
+      if (lead.full_name) q.set('name', lead.full_name);
+      if (lead.first_name) q.set('first_name', lead.first_name);
+      if (lead.last_name) q.set('last_name', lead.last_name);
+      if (lead.email) q.set('email', lead.email);
+      if (lead.phone) {
+        q.set('phone', lead.phone);
+        q.set('phone_number', lead.phone);
+      }
+    }
+    appendMarketingParams(q);
     if (extra) {
       Object.keys(extra).forEach(function (key) {
         if (extra[key] != null && extra[key] !== '') q.set(key, String(extra[key]));
       });
     }
+    return q.toString();
+  }
+
+  function buildBookingEmbedQuery(lead) {
+    var q = new URLSearchParams();
+    appendMarketingParams(q);
+
+    if (lead) {
+      if (lead.first_name) {
+        q.set('first_name', lead.first_name);
+        q.set('firstname', lead.first_name);
+      }
+      if (lead.last_name) {
+        q.set('last_name', lead.last_name);
+        q.set('lastname', lead.last_name);
+      }
+      if (lead.email) q.set('email', lead.email);
+      if (lead.phone) {
+        q.set('phone', lead.phone);
+        q.set('phone_number', lead.phone);
+      }
+      if (lead.full_name) q.set('name', lead.full_name);
+    }
+
     return q.toString();
   }
 
@@ -273,6 +329,64 @@
     });
   }
 
+  function initSchedulePage() {
+    if (!document.querySelector('.rk-schedule-page')) return;
+
+    var lead = resolveLead();
+    var cfg = config();
+    var iframe = document.getElementById('rk-schedule-booking');
+    if (!iframe) return;
+
+    var base = cfg.ghlBookingEmbedUrl
+      || iframe.getAttribute('data-booking-base')
+      || 'https://api.leadconnectorhq.com/widget/booking/vyKdc1ieqm0lUMnAph82';
+    var qs = buildBookingEmbedQuery(lead);
+
+    iframe.src = base + (qs ? '?' + qs : '');
+  }
+
+  function buildTypeformHiddenString(lead) {
+    if (!lead) return '';
+
+    var pairs = [];
+    function add(key, value) {
+      if (!key || value == null || String(value).trim() === '') return;
+      pairs.push(key + '=' + encodeURIComponent(String(value).trim()));
+    }
+
+    add('email', lead.email);
+    add('phone', lead.phone);
+    add('phone_number', lead.phone);
+    add('name', lead.full_name);
+    add('full_name', lead.full_name);
+    add('first_name', lead.first_name);
+    add('firstname', lead.first_name);
+    add('last_name', lead.last_name);
+    add('lastname', lead.last_name);
+
+    return pairs.join(',');
+  }
+
+  /** Must run before //embed.typeform.com/next/embed.js so hidden fields apply on load. */
+  function prepareBookTypeformEmbed() {
+    if (!document.querySelector('.rk-book-page')) return;
+
+    var embed = document.getElementById('rk-book-typeform-embed');
+    if (!embed) return;
+
+    var lead = resolveLead();
+    var hidden = buildTypeformHiddenString(lead);
+
+    if (hidden) {
+      embed.setAttribute('data-tf-hidden', hidden);
+    }
+
+    embed.setAttribute(
+      'data-tf-transitive-search-params',
+      'email,phone,phone_number,name,full_name,first_name,firstname,last_name,lastname'
+    );
+  }
+
   function initBookPage() {
     if (!document.querySelector('.rk-book-page')) return;
 
@@ -281,34 +395,7 @@
       sendToGhl('purchase_complete', lead).catch(function () { /* non-blocking */ });
     }
 
-    var embed = document.getElementById('rk-book-typeform-embed');
-    if (!embed || !lead) return;
-
-    var hidden = [];
-    if (lead.email) hidden.push('email=' + encodeURIComponent(lead.email));
-    if (lead.full_name) hidden.push('name=' + encodeURIComponent(lead.full_name));
-    if (lead.phone) hidden.push('phone=' + encodeURIComponent(lead.phone));
-    if (hidden.length) {
-      embed.setAttribute('data-tf-hidden', hidden.join(','));
-    }
-
-    embed.setAttribute('data-tf-auto-resize', '320,720');
-    embed.setAttribute('data-tf-no-scrollbars', '');
-  }
-
-  function rkBookTypeformHeightChanged(payload) {
-    var height = payload;
-    if (payload && typeof payload === 'object' && typeof payload.height === 'number') {
-      height = payload.height;
-    }
-    if (typeof height !== 'number' || height < 1) return;
-
-    var embed = document.getElementById('rk-book-typeform-embed');
-    if (!embed) return;
-
-    embed.style.height = height + 'px';
-    var iframe = embed.querySelector('iframe');
-    if (iframe) iframe.style.height = height + 'px';
+    prepareBookTypeformEmbed();
   }
 
   function markWhopEmbedReady() {
@@ -395,8 +482,6 @@
     trackInitiateCheckout();
   }
 
-  global.rkBookTypeformHeightChanged = rkBookTypeformHeightChanged;
-
   global.ReputationKitFunnel = {
     parseFullName: parseFullName,
     normalizeEmail: normalizeEmail,
@@ -414,7 +499,11 @@
     initHeroLeadForm: initHeroLeadForm,
     initCheckoutPage: initCheckoutPage,
     initBookPage: initBookPage,
+    prepareBookTypeformEmbed: prepareBookTypeformEmbed,
+    buildTypeformHiddenString: buildTypeformHiddenString,
+    initSchedulePage: initSchedulePage,
     buildQuery: buildQuery,
+    buildBookingEmbedQuery: buildBookingEmbedQuery,
     config: config,
   };
 })(window);

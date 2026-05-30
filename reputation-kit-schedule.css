@@ -1,0 +1,122 @@
+.rk-schedule-page {
+  --rk-schedule-text: #ffffff;
+  --rk-schedule-text-muted: rgba(255, 255, 255, 0.82);
+  --rk-schedule-border: rgba(255, 255, 255, 0.12);
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--rk-schedule-text-muted);
+  background: var(--brand-black, #000);
+  overflow-x: hidden;
+}
+
+.rk-schedule-page * {
+  box-sizing: border-box;
+}
+
+/* Hero — reputation-kit funnel theme */
+.rk-schedule-hero {
+  padding: clamp(1.75rem, 4vw, 2.75rem) 1.25rem clamp(1.25rem, 3vw, 2rem);
+  text-align: center;
+  color: var(--rk-schedule-text);
+  background:
+    radial-gradient(ellipse 120% 90% at 50% -10%, rgba(var(--brand-yellow-rgb, 255 206 0) / 0.12) 0%, transparent 45%),
+    linear-gradient(180deg, #1a1a1a 0%, var(--brand-black, #000) 100%);
+}
+
+.rk-schedule-hero__inner {
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+.rk-schedule-hero__logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+  line-height: 0;
+}
+
+.rk-schedule-hero__logo img {
+  height: 1.65rem;
+  width: auto;
+  max-width: min(11rem, 42vw);
+}
+
+.rk-schedule-hero__title {
+  margin: 0 auto;
+  max-width: 48rem;
+  font-size: clamp(1.2rem, 3.8vw, 2rem);
+  font-weight: 800;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--rk-schedule-text);
+}
+
+.rk-schedule-main {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1.25rem clamp(2.5rem, 6vw, 4rem);
+}
+
+.rk-schedule-calendar {
+  width: 100%;
+  min-height: 720px;
+  padding: 0;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #ffffff;
+  box-shadow:
+    0 24px 56px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  overflow: hidden;
+}
+
+.rk-schedule-calendar iframe {
+  display: block;
+  width: 100%;
+  min-height: 720px;
+  border: 0;
+  background: #fff;
+}
+
+.rk-schedule-footer {
+  padding: 1.25rem 1.25rem 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.65);
+  background: var(--brand-black, #000);
+  border-top: 1px solid var(--rk-schedule-border);
+}
+
+.rk-schedule-footer p {
+  margin: 0;
+}
+
+.rk-schedule-footer a {
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+}
+
+.rk-schedule-footer a:hover {
+  color: var(--brand-yellow, #ffce00);
+}
+
+@media (max-width: 600px) {
+  .rk-schedule-hero {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .rk-schedule-main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .rk-schedule-calendar,
+  .rk-schedule-calendar iframe {
+    min-height: 640px;
+  }
+}
