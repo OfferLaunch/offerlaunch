@@ -3516,11 +3516,14 @@ body.apply-funnel-modal-open {
 .apply-funnel-modal__panel {
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
     width: min(95vw, 56rem);
     max-height: 95vh;
-    overflow: auto;
+    overflow: hidden;
     border-radius: 0.75rem;
     background: #0a0a0a;
+    padding: 0;
 }
 
 .apply-funnel-modal__close {
@@ -3549,13 +3552,32 @@ body.apply-funnel-modal-open {
 
 .apply-funnel-modal__embed {
     width: 100%;
-    min-height: 600px;
+    min-height: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+
+.apply-funnel-modal__embed.typeform-embed {
+    min-height: 0;
 }
 
 .apply-funnel-modal__embed > div[data-tf-live] {
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
+    min-height: 0 !important;
+    height: min(82vh, 720px) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.apply-funnel-modal__embed iframe {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    border: 0 !important;
+    vertical-align: top;
 }
 
 .apply-funnel__legal {
