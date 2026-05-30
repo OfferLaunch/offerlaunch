@@ -291,6 +291,24 @@
     if (hidden.length) {
       embed.setAttribute('data-tf-hidden', hidden.join(','));
     }
+
+    embed.setAttribute('data-tf-auto-resize', '320,720');
+    embed.setAttribute('data-tf-no-scrollbars', '');
+  }
+
+  function rkBookTypeformHeightChanged(payload) {
+    var height = payload;
+    if (payload && typeof payload === 'object' && typeof payload.height === 'number') {
+      height = payload.height;
+    }
+    if (typeof height !== 'number' || height < 1) return;
+
+    var embed = document.getElementById('rk-book-typeform-embed');
+    if (!embed) return;
+
+    embed.style.height = height + 'px';
+    var iframe = embed.querySelector('iframe');
+    if (iframe) iframe.style.height = height + 'px';
   }
 
   function markWhopEmbedReady() {
@@ -376,6 +394,8 @@
     watchWhopEmbed(lead);
     trackInitiateCheckout();
   }
+
+  global.rkBookTypeformHeightChanged = rkBookTypeformHeightChanged;
 
   global.ReputationKitFunnel = {
     parseFullName: parseFullName,

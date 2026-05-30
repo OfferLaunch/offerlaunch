@@ -3561,12 +3561,14 @@ body.apply-funnel-modal-open {
     min-height: 0;
 }
 
-.apply-funnel-modal__embed > div[data-tf-live] {
+.apply-funnel-modal__embed > div[data-tf-live],
+.apply-funnel-modal__embed > div[data-tf-widget] {
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
     min-height: 0 !important;
-    height: min(82vh, 720px) !important;
+    height: auto !important;
+    max-height: min(82vh, 720px) !important;
     margin: 0 !important;
     padding: 0 !important;
 }
@@ -3574,7 +3576,8 @@ body.apply-funnel-modal-open {
 .apply-funnel-modal__embed iframe {
     display: block !important;
     width: 100% !important;
-    height: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
     margin: 0 !important;
     border: 0 !important;
     vertical-align: top;

@@ -307,8 +307,21 @@
 
 #rk-book-typeform-modal .apply-funnel-modal__panel {
   height: auto;
+  width: min(95vw, 42rem);
 }
 
 #rk-book-typeform-modal .apply-funnel-modal__embed {
   flex: 0 0 auto;
+}
+
+#rk-book-typeform-modal .apply-funnel-modal__embed > div[data-tf-live] {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: min(85vh, 720px) !important;
+}
+
+#rk-book-typeform-modal .apply-funnel-modal__embed iframe {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: min(85vh, 720px);
 }

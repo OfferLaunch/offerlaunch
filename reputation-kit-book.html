@@ -258,14 +258,20 @@
     <div class="apply-funnel-modal__panel" role="dialog" aria-modal="true" aria-label="Book your strategy call">
       <button type="button" class="apply-funnel-modal__close" data-close-modal aria-label="Close form">&times;</button>
       <div class="apply-funnel-modal__embed typeform-embed">
-        <div data-tf-live="01KSV0JD52GQYSR6972X91M6D8" id="rk-book-typeform-embed"></div>
+        <div
+          data-tf-live="01KSV0JD52GQYSR6972X91M6D8"
+          id="rk-book-typeform-embed"
+          data-tf-auto-resize="320,720"
+          data-tf-no-scrollbars
+          data-tf-on-height-changed="rkBookTypeformHeightChanged"
+        ></div>
       </div>
     </div>
   </div>
 
-  <script src="//embed.typeform.com/next/embed.js"></script>
   <script src="reputation-kit-config.js"></script>
   <script src="reputation-kit-funnel.js"></script>
+  <script src="//embed.typeform.com/next/embed.js"></script>
   <script src="fanbasis-script.js"></script>
   <script>
   (function () {
