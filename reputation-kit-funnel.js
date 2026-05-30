@@ -151,7 +151,7 @@
       embed.setAttribute('data-whop-checkout-prefill-name', name);
     }
 
-    // wco.setEmail(embedId, email) — first arg is the div id, NOT the email
+    // wco.setEmail(embedId, email): first arg is the div id, NOT the email
     var embedId = embed.id;
     if (embedId && email && global.wco && typeof global.wco.setEmail === 'function') {
       try {
@@ -273,6 +273,83 @@
     });
   }
 
+  function initBookPage() {
+    if (!document.querySelector('.rk-book-page')) return;
+
+    var lead = resolveLead();
+    if (lead && lead.email) {
+      sendToGhl('purchase_complete', lead).catch(function () { /* non-blocking */ });
+    }
+
+    var embed = document.getElementById('rk-book-typeform-embed');
+    if (!embed || !lead) return;
+
+    var hidden = [];
+    if (lead.email) hidden.push('email=' + encodeURIComponent(lead.email));
+    if (lead.full_name) hidden.push('name=' + encodeURIComponent(lead.full_name));
+    if (lead.phone) hidden.push('phone=' + encodeURIComponent(lead.phone));
+    if (hidden.length) {
+      embed.setAttribute('data-tf-hidden', hidden.join(','));
+    }
+  }
+
+  function markWhopEmbedReady() {
+    var embed = document.getElementById('whop-checkout-embed');
+    if (!embed) return;
+    embed.classList.add('is-ready');
+    embed.setAttribute('aria-busy', 'false');
+    var loading = document.getElementById('rk-whop-loading');
+    if (loading) loading.hidden = true;
+  }
+
+  function watchWhopEmbed(lead) {
+    var embed = document.getElementById('whop-checkout-embed');
+    if (!embed) return;
+
+    var attempts = 0;
+    var maxAttempts = 80;
+
+    function tick() {
+      attempts += 1;
+      if (embed.querySelector('iframe')) {
+        markWhopEmbedReady();
+        applyWhopPrefill(lead);
+        return;
+      }
+      if (global.wco) {
+        applyWhopPrefill(lead);
+      }
+      if (attempts >= maxAttempts) {
+        markWhopEmbedReady();
+        return;
+      }
+      global.setTimeout(tick, 150);
+    }
+
+    tick();
+  }
+
+  function applyCheckoutPricingDisplay() {
+    var cfg = config();
+    var price = cfg.priceDisplay || '$197';
+    var compare = cfg.compareAtDisplay || '$497';
+    var save = cfg.saveDisplay || '$300';
+    var value = cfg.kitValueDisplay || '$1,499';
+
+    document.querySelectorAll('[data-rk-price]').forEach(function (el) {
+      el.textContent = price;
+    });
+    document.querySelectorAll('[data-rk-compare]').forEach(function (el) {
+      el.textContent = compare;
+    });
+    document.querySelectorAll('[data-rk-save]').forEach(function (el) {
+      el.textContent = save.indexOf('−') === 0 || save.indexOf('-') === 0 ? save : '−' + save;
+    });
+    document.querySelectorAll('[data-rk-value]').forEach(function (el) {
+      el.textContent = value;
+    });
+  }
+
   function initCheckoutPage() {
     var cfg = config();
     var funnelPath = cfg.funnelPath || '/reputation-kit#funnel-checkout';
@@ -282,6 +359,8 @@
       global.location.replace(funnelPath);
       return;
     }
+
+    applyCheckoutPricingDisplay();
 
     var summary = document.getElementById('rk-checkout-summary');
     var nameEl = document.getElementById('rk-checkout-name');
@@ -294,6 +373,7 @@
     }
 
     configureWhopEmbed(lead);
+    watchWhopEmbed(lead);
     trackInitiateCheckout();
   }
 
@@ -313,6 +393,7 @@
     configureWhopEmbed: configureWhopEmbed,
     initHeroLeadForm: initHeroLeadForm,
     initCheckoutPage: initCheckoutPage,
+    initBookPage: initBookPage,
     buildQuery: buildQuery,
     config: config,
   };

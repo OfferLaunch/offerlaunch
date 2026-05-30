@@ -4,51 +4,170 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Secure Checkout | The Reputation Operator's Kit</title>
+  <meta name="description" content="Secure checkout for The Reputation Operator's Kit. $197 one-time. Instant digital delivery. 30-day guarantee.">
   <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://offerlaunch.ai/reputation-kit-checkout">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="fanbasis-styles.css">
   <link rel="stylesheet" href="reputation-kit-funnel-pages.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon/OL fav.png">
-  <script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
 </head>
-<body class="rk-step-page">
+<body class="rk-step-page rk-checkout-page">
   <header class="rk-topbar">
     <a href="/reputation-kit" aria-label="OfferLaunch home">
       <img src="offer-launch-assets/Asset 2.png" alt="OfferLaunch" width="140" height="25">
     </a>
+    <a href="/reputation-kit#funnel-checkout" class="rk-topbar__back">← Edit details</a>
   </header>
 
-  <main class="rk-shell">
-    <h1 class="rk-title">Complete your order</h1>
-    <p class="rk-sub">Secure checkout for The Reputation Operator's Kit — $197 one-time.</p>
+  <main class="rk-shell rk-shell--wide">
 
-    <div class="rk-card">
-      <p class="rk-price">Only <s>$497</s> <strong>$197</strong> · Instant delivery</p>
-
-      <div class="rk-lead-summary" id="rk-checkout-summary" hidden>
-        <strong id="rk-checkout-name"></strong>
-        <span id="rk-checkout-email"></span>
-      </div>
-
-      <div
-        id="whop-checkout-embed"
-        role="region"
-        aria-label="Checkout"
-        data-whop-checkout-theme="light"
-        data-whop-checkout-hide-price="true"
-      ></div>
-
-      <p class="rk-secure">🔒 256-bit encrypted checkout powered by Whop</p>
+    <div class="rk-headline">
+      <h1 class="rk-title">You're one step away.</h1>
+      <p class="rk-sub">Complete your order to get instant access to The Reputation Operator's Kit.</p>
     </div>
 
+    <div class="rk-checkout-grid">
+
+      <!-- LEFT: Order Summary -->
+      <aside class="rk-summary" aria-labelledby="rk-summary-title">
+        <h2 id="rk-summary-title" class="rk-summary__title">Your Order</h2>
+
+        <div class="rk-summary__product">
+          <div class="rk-summary__product-icon" aria-hidden="true">📋</div>
+          <div class="rk-summary__product-info">
+            <p class="rk-summary__product-name">The Reputation Operator's Kit</p>
+            <p class="rk-summary__product-meta">Instant digital delivery · One-time payment</p>
+          </div>
+        </div>
+
+        <div class="rk-summary__totals">
+          <div class="rk-summary__row">
+            <span>Subtotal</span>
+            <span><s data-rk-compare>$497</s></span>
+          </div>
+          <div class="rk-summary__row rk-summary__row--discount">
+            <span>Launch discount</span>
+            <span data-rk-save>−$300</span>
+          </div>
+          <div class="rk-summary__row rk-summary__row--total">
+            <span>Total today</span>
+            <span><strong data-rk-price>$197</strong></span>
+          </div>
+        </div>
+
+        <div class="rk-summary__includes">
+          <p class="rk-summary__includes-label">What's included</p>
+          <ul>
+            <li>11 operator modules — Audit, Reddit, PR, Reviews, AI Layer + more</li>
+            <li>7 copy-and-paste AI prompts (ChatGPT &amp; Claude ready)</li>
+            <li>The 7-Day Page 1 Domination Framework</li>
+            <li>The Gray Hat section — aggressive plays the $20K/mo agencies run</li>
+            <li>The 30-Day Quick Start Checklist</li>
+            <li>Lifetime access &amp; all future updates</li>
+          </ul>
+        </div>
+
+        <div class="rk-guarantee" role="group" aria-label="Money-back guarantee">
+          <img src="offer-launch-assets/guarantee-30-day.png" alt="" class="rk-guarantee__badge" width="64" height="64" loading="lazy" decoding="async">
+          <div class="rk-guarantee__copy">
+            <p class="rk-guarantee__title">30-Day Operator Guarantee</p>
+            <p class="rk-guarantee__body">Run the audit. Execute the 7-day framework. If it doesn't do what we said, email us within 30 days for a full refund. No questions, no stipulations.</p>
+          </div>
+        </div>
+
+        <div class="rk-next">
+          <p class="rk-next__label">What happens next</p>
+          <ol class="rk-next__list">
+            <li><span class="rk-next__num">1</span><span><strong>Complete payment.</strong> Secure checkout via Whop. Takes under 60 seconds.</span></li>
+            <li><span class="rk-next__num">2</span><span><strong>Instant access.</strong> Kit delivered to your email immediately after purchase.</span></li>
+            <li><span class="rk-next__num">3</span><span><strong>Run your audit.</strong> Start with Module 01 and see your real page 1 in 15 minutes.</span></li>
+          </ol>
+        </div>
+      </aside>
+
+      <!-- RIGHT: Payment -->
+      <section class="rk-card rk-card--payment" aria-labelledby="rk-pay-title">
+        <h2 id="rk-pay-title" class="rk-card__title">Payment</h2>
+        <p class="rk-pay-price">Only <s data-rk-compare>$497</s> <strong data-rk-price>$197</strong> · Save <span data-rk-save>−$300</span></p>
+
+        <div class="rk-lead-summary" id="rk-checkout-summary" hidden>
+          <strong id="rk-checkout-name"></strong>
+          <span id="rk-checkout-email"></span>
+        </div>
+
+        <div
+          id="whop-checkout-embed"
+          class="rk-whop-embed"
+          role="region"
+          aria-label="Checkout"
+          aria-busy="true"
+          data-whop-checkout-theme="light"
+          data-whop-checkout-hide-price="true"
+        >
+          <p class="rk-whop-loading" id="rk-whop-loading">Loading secure checkout…</p>
+        </div>
+
+        <div class="funnel-checkout-trust" role="group" aria-label="Payment security and guarantee">
+          <div class="funnel-checkout-trust__payments">
+            <ul class="funnel-card-brands" aria-label="Accepted payment methods">
+              <li><img src="offer-launch-assets/card-visa.png" alt="Visa" width="56" height="36" loading="lazy" decoding="async"></li>
+              <li><img src="offer-launch-assets/card-mastercard.png" alt="Mastercard" width="56" height="36" loading="lazy" decoding="async"></li>
+              <li><img src="offer-launch-assets/card-amex.png" alt="American Express" width="56" height="36" loading="lazy" decoding="async"></li>
+              <li><img src="offer-launch-assets/card-discover.png" alt="Discover" width="56" height="36" loading="lazy" decoding="async"></li>
+            </ul>
+            <p class="funnel-checkout-trust__payments-label">
+              <span>Secure payments by</span>
+              <img src="offer-launch-assets/whop-logo.png" alt="Whop" class="funnel-checkout-trust__whop" width="88" height="24">
+            </p>
+          </div>
+          <p class="funnel-checkout-trust__secure">
+            <svg class="funnel-lock-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <rect x="4" y="9" width="12" height="9" rx="1.5" fill="currentColor"/>
+              <path d="M6.5 9V7a3.5 3.5 0 0 1 7 0v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="10" cy="13.5" r="1.25" fill="var(--brand-yellow)"/>
+            </svg>
+            <span>100% Secure 256-Bit Encrypted Checkout</span>
+          </p>
+        </div>
+
+        <p class="rk-fineprint">By completing your purchase you agree to our <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>.</p>
+      </section>
+
+    </div>
+
+    <!-- FAQ -->
+    <section class="rk-faq" aria-labelledby="rk-faq-title">
+      <h2 id="rk-faq-title" class="rk-faq__title">Quick questions before you buy</h2>
+
+      <details class="rk-faq__item">
+        <summary>Is this a one-time charge?</summary>
+        <p>Yes. $197 today and you're done. No subscription. No surprise upsells inside the kit. No future billing.</p>
+      </details>
+
+      <details class="rk-faq__item">
+        <summary>When do I get access?</summary>
+        <p>Immediately. The full kit is delivered to your email within 60 seconds of payment, along with the 7 AI prompts and the 30-day checklist.</p>
+      </details>
+
+      <details class="rk-faq__item">
+        <summary>What if it doesn't work for my situation?</summary>
+        <p>Run the audit and the 7-day framework. If it doesn't do what we said it would, email <a href="mailto:team@offerlaunch.ai">team@offerlaunch.ai</a> within 30 days for a full refund. No questions, no stipulations.</p>
+      </details>
+    </section>
+
     <footer class="rk-footer">
-      <p><a href="/reputation-kit#funnel-checkout">← Edit your details</a></p>
+      <p class="rk-footer__help">Need help? <a href="mailto:team@offerlaunch.ai">team@offerlaunch.ai</a></p>
       <p><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
     </footer>
+
   </main>
 
   <script src="reputation-kit-config.js"></script>
   <script src="reputation-kit-funnel.js"></script>
+  <script async src="https://js.whop.com/static/checkout/loader.js"></script>
   <script>
     window.ReputationKitFunnel.initCheckoutPage();
   </script>

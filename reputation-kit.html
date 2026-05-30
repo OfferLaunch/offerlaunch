@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Reputation Operator's Kit | OfferLaunch</title>
-    <meta name="description" content="Own Page 1. Bury the noise. The exact playbook to reset your search results and win AI answers — in 7 days.">
+    <meta name="description" content="Own Page 1. Bury the noise. The exact playbook to reset your search results and win AI answers in 7 days.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="The Reputation Operator's Kit | OfferLaunch">
-    <meta property="og:description" content="Own Page 1. Bury the noise. The exact playbook to reset your search results and win AI answers — in 7 days.">
+    <meta property="og:description" content="Own Page 1. Bury the noise. The exact playbook to reset your search results and win AI answers in 7 days.">
     <meta property="og:url" content="https://offerlaunch.ai/reputation-kit">
     <!-- Create a 1200x630 image at offer-launch-assets/og-reputation-kit.png -->
     <meta property="og:image" content="https://offerlaunch.ai/offer-launch-assets/og-reputation-kit.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="The Reputation Operator's Kit | OfferLaunch">
-    <meta name="twitter:description" content="Own Page 1. Bury the noise. The exact playbook to reset your search results and win AI answers — in 7 days.">
+    <meta name="twitter:description" content="Own Page 1. Bury the noise. The exact playbook to reset your search results and win AI answers in 7 days.">
     <meta name="twitter:image" content="https://offerlaunch.ai/offer-launch-assets/og-reputation-kit.png">
     <!-- META PIXEL: paste base code here -->
     <script type="application/ld+json">
@@ -21,7 +21,7 @@
         "@context": "https://schema.org",
         "@type": "Product",
         "name": "The Reputation Operator's Kit",
-        "description": "Own Page 1. Bury the noise. The exact playbook to reset your search results and win AI answers — in 7 days.",
+        "description": "Own Page 1. Bury the noise. The exact playbook to reset your search results and win AI answers in 7 days.",
         "brand": { "@type": "Brand", "name": "OfferLaunch" },
         "offers": {
             "@type": "Offer",
@@ -37,14 +37,14 @@
     <link rel="icon" type="image/png" href="favicon/OL fav.png">
     <link rel="canonical" href="https://offerlaunch.ai/reputation-kit">
     <style>
-        /* Scoped tokens — inherit from fanbasis-styles :root, no overrides */
+        /* Scoped tokens: inherit brand palette from fanbasis-styles :root */
         .funnel-page {
             --funnel-ink: var(--secondary);
-            --funnel-ink-muted: rgba(26, 26, 26, 0.72);
-            --funnel-surface: #ffffff;
-            --funnel-surface-alt: rgba(255, 230, 109, 0.08);
-            --funnel-border: rgba(26, 26, 26, 0.1);
-            --funnel-gradient: linear-gradient(90deg, var(--primary), var(--accent));
+            --funnel-ink-muted: rgba(0, 0, 0, 0.72);
+            --funnel-surface: var(--brand-white);
+            --funnel-surface-alt: rgba(var(--brand-yellow-rgb) / 0.08);
+            --funnel-border: rgba(0, 0, 0, 0.1);
+            --funnel-gradient: linear-gradient(90deg, var(--brand-yellow), var(--brand-orange));
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
@@ -52,16 +52,22 @@
             line-height: 1.65;
             color: var(--funnel-ink);
             background: var(--funnel-surface);
+            overflow-x: hidden;
         }
 
         .funnel-page * { box-sizing: border-box; }
 
+        .funnel-page .funnel-band,
+        .funnel-page main {
+            overflow: visible;
+        }
+
         .funnel-gradient-text {
-            background: var(--funnel-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+            -webkit-text-fill-color: var(--brand-yellow);
+            color: var(--brand-yellow);
         }
 
         .funnel-highlight {
@@ -77,12 +83,143 @@
             display: inline-block;
             padding: 0.5rem 1.25rem;
             border-radius: 999px;
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            font-size: clamp(0.8rem, 2.2vw, 1rem);
             font-weight: 800;
             letter-spacing: 0.04em;
             text-transform: uppercase;
             background: var(--funnel-gradient);
             color: var(--secondary);
+            line-height: 1.25;
+        }
+
+        .funnel-pill--white {
+            background: #ffffff;
+            color: var(--secondary);
+            border: 1px solid rgba(26, 26, 26, 0.1);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+        }
+
+        .funnel-section-head {
+            position: relative;
+            padding-bottom: clamp(2.75rem, 5vw, 3.25rem);
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            overflow: visible;
+        }
+
+        .funnel-pill--overlap {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 50%);
+            z-index: 5;
+            width: max-content;
+            max-width: calc(100% - 2.5rem);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+            white-space: normal;
+            text-align: center;
+            hyphens: none;
+        }
+
+        .funnel-band--has-pill {
+            padding-bottom: clamp(2.5rem, 5vw, 3.25rem);
+            z-index: 2;
+            overflow: visible;
+        }
+
+        .funnel-band--pill-offset {
+            padding-top: clamp(3.5rem, 7vw, 4.75rem);
+            position: relative;
+            z-index: 1;
+            overflow: visible;
+        }
+
+        .funnel-section-head .funnel-sub {
+            margin-bottom: 0;
+        }
+
+        .funnel-band--pill-offset > .funnel-inner > .funnel-sub:first-child {
+            margin-top: 0;
+        }
+
+        .funnel-band--pill-offset .funnel-features {
+            margin-top: 0.5rem;
+        }
+
+        .funnel-band--modules-intro {
+            padding-bottom: clamp(1.25rem, 3vw, 1.75rem);
+        }
+
+        .funnel-band--modules-intro .funnel-sub {
+            margin-bottom: 0;
+        }
+
+        .funnel-pill-seam {
+            position: relative;
+            z-index: 4;
+            overflow: visible;
+            padding: 0;
+        }
+
+        .funnel-pill-seam__inner {
+            position: relative;
+            max-width: 56rem;
+            height: clamp(2.25rem, 5vw, 2.75rem);
+            margin: 0 auto;
+            padding: 0 1.25rem;
+        }
+
+        .funnel-pill-seam .funnel-pill {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            max-width: calc(100% - 2.5rem);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+        }
+
+        .funnel-pill-seam--light-dark {
+            background: linear-gradient(
+                180deg,
+                var(--primary) 0%,
+                var(--primary) 46%,
+                var(--secondary) 54%,
+                var(--secondary) 100%
+            );
+        }
+
+        .funnel-pill-seam--light-grey {
+            background: linear-gradient(
+                180deg,
+                var(--funnel-surface) 0%,
+                var(--funnel-surface) 46%,
+                var(--funnel-surface-alt) 54%,
+                var(--funnel-surface-alt) 100%
+            );
+        }
+
+        .funnel-pill-seam--white-dark {
+            background: linear-gradient(
+                180deg,
+                var(--funnel-surface) 0%,
+                var(--funnel-surface) 46%,
+                var(--secondary) 54%,
+                var(--secondary) 100%
+            );
+        }
+
+        .funnel-band--modules-body {
+            padding-top: clamp(2rem, 4.5vw, 2.75rem);
+        }
+
+        .funnel-band--modules-body .funnel-features {
+            margin-top: 1.25rem;
+            padding-top: 0.5rem;
+        }
+
+        .funnel-band--prompts-body {
+            padding-top: clamp(2rem, 4.5vw, 2.75rem);
         }
 
         .funnel-topbar {
@@ -161,14 +298,16 @@
         .funnel-band {
             padding: clamp(2.5rem, 6vw, 3.5rem) 0;
             text-align: center;
+            overflow: visible;
         }
 
         .funnel-band--flush { padding-top: 0; }
 
         .funnel-band--dark {
-            background: radial-gradient(ellipse 120% 90% at 50% -10%, rgba(255, 230, 109, 0.12) 0%, transparent 45%),
+            background: radial-gradient(ellipse 120% 90% at 50% -10%, rgba(var(--brand-yellow-rgb) / 0.12) 0%, transparent 45%),
                 linear-gradient(180deg, var(--light-background) 0%, var(--background) 100%);
             color: var(--text);
+            padding-bottom: clamp(3rem, 6vw, 4.5rem);
         }
 
         .funnel-band--white {
@@ -181,20 +320,28 @@
             color: var(--funnel-ink);
         }
 
+        .funnel-band--yellow {
+            background: var(--primary);
+            color: var(--secondary);
+        }
+
         .funnel-band--brand {
             background: linear-gradient(180deg, var(--secondary) 0%, var(--background) 100%);
             color: var(--text);
+            overflow: visible;
         }
 
         .funnel-band--bridge {
             background: linear-gradient(180deg, var(--background) 0%, var(--background) 32%, var(--funnel-surface) 32%, var(--funnel-surface) 100%);
             padding-bottom: 0;
+            overflow: visible;
         }
 
         .funnel-inner {
             max-width: 56rem;
             margin: 0 auto;
             padding: 0 1.25rem;
+            overflow: visible;
         }
 
         .funnel-inner--narrow {
@@ -235,52 +382,247 @@
             color: rgba(255, 255, 255, 0.85);
         }
 
-        .funnel-hero-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            align-items: start;
-            text-align: left;
-        }
-
-        @media (min-width: 900px) {
-            .funnel-hero-grid { grid-template-columns: 1.15fr 0.85fr; }
-        }
-
-        .funnel-vsl {
-            border-radius: 0.5rem;
-            overflow: hidden;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
-        }
-
-        .funnel-vsl__sound {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.5rem;
-            background: var(--secondary);
-            border-bottom: 2px solid var(--primary);
-            color: var(--text);
-            font-size: 0.8125rem;
-            font-weight: 700;
-        }
-
-        .funnel-vsl__frame {
-            aspect-ratio: 16 / 9;
+        .funnel-hero-stack {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             gap: 0.5rem;
-            background: var(--background);
-            color: rgba(255, 255, 255, 0.55);
-            font-size: 0.875rem;
+            margin: 0 auto;
+            max-width: 36rem;
+            width: 100%;
         }
 
-        .funnel-vsl__play {
-            font-size: 2.5rem;
-            color: rgba(255, 230, 109, 0.45);
+        .funnel-hero-showcase {
+            width: 100%;
+            max-width: min(42rem, 100%);
+            margin: 0 auto;
+            padding: 0;
+            line-height: 0;
+        }
+
+        .funnel-hero-showcase img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0.75rem;
+            box-shadow: 0 18px 48px rgba(0, 0, 0, 0.5);
+        }
+
+        .funnel-hero-launch-strip {
+            width: 100%;
+            max-width: 34rem;
+            margin: 0.75rem auto 0.5rem;
+            padding: 0.85rem 1rem 0.95rem;
+            text-align: center;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(var(--brand-yellow-rgb) / 0.45);
+            background: linear-gradient(180deg, var(--secondary) 0%, #0d0d0d 100%);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+            color: var(--text);
+        }
+
+        .funnel-hero-launch-strip .funnel-urgency {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0;
+            background: transparent;
+            color: inherit;
+        }
+
+        .funnel-urgency__banner {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            background: rgba(var(--brand-yellow-rgb) / 0.12);
+            border: 1px solid rgba(var(--brand-yellow-rgb) / 0.45);
+            font-size: clamp(0.8125rem, 2.4vw, 0.9375rem);
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            line-height: 1.25;
+        }
+
+        .funnel-urgency__pulse {
+            flex-shrink: 0;
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background: #ff4d4d;
+            box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.65);
+            animation: funnel-urgency-pulse 1.6s ease-out infinite;
+        }
+
+        @keyframes funnel-urgency-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.55); }
+            70% { box-shadow: 0 0 0 0.5rem rgba(255, 77, 77, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0); }
+        }
+
+        .funnel-urgency__hook {
+            margin: 0;
+            font-size: clamp(0.9375rem, 2.5vw, 1.0625rem);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.35;
+        }
+
+        .funnel-urgency__body {
+            padding: 1rem 1.15rem 1rem;
+            background: var(--funnel-surface);
+        }
+
+        .funnel-urgency__body .funnel-kit-value {
+            margin-bottom: 0.35rem;
+        }
+
+        .funnel-urgency-price {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem 0.75rem;
+            margin: 0.15rem 0 0.5rem;
+        }
+
+        .funnel-urgency-price .funnel-price-big {
+            margin: 0;
+            font-size: clamp(1.65rem, 4.5vw, 2.15rem);
+        }
+
+        .funnel-urgency-price .funnel-price-big strong {
+            color: var(--secondary);
+            background: var(--funnel-gradient);
+            padding: 0.05em 0.2em;
+            border-radius: 0.2rem;
+        }
+
+        .funnel-urgency-badge {
+            display: inline-block;
+            padding: 0.35rem 0.65rem;
+            border-radius: 0.3rem;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: var(--secondary);
+            background: var(--funnel-gradient);
+            white-space: nowrap;
+        }
+
+        .funnel-form-intro {
+            margin: -1.25rem -1.25rem 1.25rem;
+            border-bottom: 1px solid var(--funnel-border);
+            border-radius: 0.65rem 0.65rem 0 0;
+            overflow: hidden;
+        }
+
+        .funnel-form-kicker {
+            margin: 0;
+            padding: 0.55rem 0.85rem;
+            border-radius: 0;
+            background: rgba(180, 35, 24, 0.08);
+            border: none;
+            border-bottom: 1px solid rgba(180, 35, 24, 0.22);
+            font-size: 0.8125rem;
+            font-weight: 800;
+            color: #b42318;
+            letter-spacing: 0.03em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .funnel-form-pricing {
+            padding: 1rem 1rem 0.9rem;
+            background: linear-gradient(180deg, rgba(var(--brand-yellow-rgb) / 0.14) 0%, rgba(var(--brand-yellow-rgb) / 0.04) 100%);
+            text-align: center;
+        }
+
+        .funnel-form-pricing .funnel-price-big {
+            margin: 0 0 0.45rem;
+            font-size: clamp(1.5rem, 4.2vw, 1.9rem);
+        }
+
+        .funnel-form-pricing .funnel-price-big strong {
+            color: var(--secondary);
+            background: var(--funnel-gradient);
+            padding: 0.05em 0.2em;
+            border-radius: 0.2rem;
+        }
+
+        .funnel-form-pricing__badge {
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            padding: 0.35rem 0.7rem;
+            border-radius: 0.3rem;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--secondary);
+            background: var(--funnel-gradient);
+        }
+
+        .funnel-form-pricing__note {
+            margin: 0;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--funnel-ink-muted);
+            line-height: 1.4;
+        }
+
+        .funnel-urgency__note {
+            margin: 0;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--funnel-ink-muted);
+            line-height: 1.4;
+        }
+
+        .funnel-urgency__arrow {
+            display: block;
+            margin: 0.65rem auto 0;
+            font-size: 1.25rem;
+            line-height: 1;
+            color: var(--secondary);
+            animation: funnel-urgency-bounce 1.4s ease-in-out infinite;
+        }
+
+        @keyframes funnel-urgency-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(0.2rem); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .funnel-urgency__pulse,
+            .funnel-urgency__arrow {
+                animation: none;
+            }
+        }
+
+        .funnel-hero-submit {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            padding: 1.25rem;
+            background: var(--funnel-surface);
+            border: 1px solid var(--funnel-border);
+            border-radius: 0.75rem;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+            color: var(--funnel-ink);
+            text-align: center;
+        }
+
+        .funnel-hero-grid {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 32rem;
         }
 
         .funnel-offer-card {
@@ -294,21 +636,44 @@
         }
 
         .funnel-offer-card__visual {
-            min-height: 7rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin: 0 0 1rem;
             border-radius: 0.5rem;
-            background: var(--funnel-surface-alt);
-            border: 1px solid rgba(255, 230, 109, 0.25);
-            font-size: 3rem;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .funnel-offer-card__visual img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .funnel-offer-card__note {
             margin: 0 0 0.5rem;
             font-size: 0.9rem;
             color: var(--funnel-ink-muted);
+        }
+
+        .funnel-kit-value {
+            margin: 0 0 0.35rem;
+            font-size: 0.9375rem;
+            font-weight: 700;
+            color: var(--funnel-ink-muted);
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .funnel-kit-value strong {
+            color: var(--funnel-ink);
+            font-weight: 800;
+        }
+
+        .funnel-band--dark .funnel-kit-value {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .funnel-band--dark .funnel-kit-value strong {
+            color: var(--text);
         }
 
         .funnel-scarcity {
@@ -395,11 +760,146 @@
             margin: 0 auto;
         }
 
-        .funnel-secure {
-            margin-top: 0.75rem;
-            font-size: 0.75rem;
+        .funnel-checkout-band {
+            padding-bottom: clamp(1.25rem, 3vw, 1.75rem);
+        }
+
+        .funnel-band--final-cta {
+            padding-top: clamp(1.25rem, 3.5vw, 1.75rem);
+            padding-bottom: clamp(1rem, 2.5vw, 1.5rem);
+        }
+
+        .funnel-band--dark.funnel-band--final-cta .funnel-hero-h1 {
+            color: var(--text);
+        }
+
+        .funnel-band--dark.funnel-band--final-cta .funnel-hero-sub {
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 1rem;
+        }
+
+        .funnel-band--dark .funnel-sub {
+            color: rgba(255, 255, 255, 0.85);
+            opacity: 1;
+        }
+
+        .funnel-checkout-trust {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(26, 26, 26, 0.1);
+            display: grid;
+            gap: 0.85rem;
+            text-align: center;
+        }
+
+        .funnel-checkout-trust__payments {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .funnel-card-brands {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            width: 100%;
+            max-width: 15rem;
+            margin: 0 auto;
+            list-style: none;
+            padding: 0;
+        }
+
+        .funnel-card-brands li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 3 / 2;
+            min-height: 2rem;
+            padding: 0.25rem;
+            border-radius: 0.35rem;
+            background: #f7f7f7;
+            border: 1px solid rgba(26, 26, 26, 0.08);
+        }
+
+        .funnel-card-brands img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-height: 1.65rem;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .funnel-checkout-trust__payments-label {
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem 0.5rem;
+            margin: 0;
+            font-size: 0.6875rem;
             font-weight: 600;
             color: var(--funnel-ink-muted);
+            letter-spacing: 0.03em;
+        }
+
+        .funnel-checkout-trust__whop {
+            height: 1.35rem;
+            width: auto;
+            max-width: 5.5rem;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+
+        .funnel-checkout-trust__guarantee {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            margin: 0 auto;
+            padding: 0.4rem 0.65rem;
+            max-width: 100%;
+            border-radius: 0.5rem;
+            background: rgba(var(--brand-yellow-rgb) / 0.14);
+            font-size: 0.8125rem;
+            font-weight: 800;
+            color: var(--secondary);
+            line-height: 1.3;
+            text-align: left;
+        }
+
+        .funnel-guarantee-icon {
+            flex-shrink: 0;
+            width: 3.5rem;
+            height: 3.5rem;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.15));
+        }
+
+        .funnel-checkout-trust__guarantee span {
+            max-width: 9.5rem;
+        }
+
+        .funnel-checkout-trust__secure {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            margin: 0 auto;
+            max-width: 18rem;
+            font-size: 0.6875rem;
+            font-weight: 700;
+            color: var(--funnel-ink-muted);
+            line-height: 1.35;
+            letter-spacing: 0.02em;
+        }
+
+        .funnel-lock-icon {
+            flex-shrink: 0;
+            width: 1.05rem;
+            height: 1.05rem;
+            color: var(--secondary);
         }
 
         .funnel-cta {
@@ -454,8 +954,8 @@
         .funnel-float-wrap {
             position: relative;
             margin-top: -4rem;
-            padding-bottom: 3rem;
-            z-index: 2;
+            padding-bottom: 4rem;
+            z-index: 3;
         }
 
         .funnel-float-card {
@@ -529,7 +1029,8 @@
         }
 
         .funnel-band--white .funnel-h2,
-        .funnel-band--grey .funnel-h2 { color: var(--funnel-ink); }
+        .funnel-band--grey .funnel-h2,
+        .funnel-band--yellow .funnel-h2 { color: var(--funnel-ink); }
 
         .funnel-band--brand .funnel-h2,
         .funnel-band--dark .funnel-h2 { color: var(--text); }
@@ -562,49 +1063,81 @@
         .funnel-band--dark .funnel-copy p,
         .funnel-band--brand .funnel-copy p { color: rgba(255, 255, 255, 0.88); }
 
+        .funnel-band--dark .funnel-checklist li { color: rgba(255, 255, 255, 0.88); }
+
         .funnel-band--dark .funnel-copy a,
         .funnel-band--brand .funnel-copy a { color: var(--primary); }
+
+        .funnel-band--yellow .funnel-sub {
+            color: var(--funnel-ink-muted);
+            opacity: 1;
+        }
 
         /* Feature / bonus cards */
         .funnel-features {
             display: flex;
             flex-direction: column;
-            gap: 2.5rem;
+            gap: 3.25rem;
             margin-top: 2rem;
+            padding-top: 1.25rem;
+            overflow: visible;
         }
 
         .funnel-feature {
-            position: relative;
             max-width: 52rem;
             margin: 0 auto;
-            background: var(--funnel-surface);
-            border: 1px solid var(--funnel-border);
-            border-radius: 0.75rem;
-            overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            padding-top: 0;
+            background: transparent;
+            border: none;
+            overflow: visible;
             text-align: left;
         }
 
         .funnel-feature__badge {
             position: absolute;
-            top: -0.75rem;
-            left: 1.5rem;
-            z-index: 2;
-            padding: 0.4rem 1rem;
+            top: 0;
+            left: 50%;
+            z-index: 5;
+            transform: translate(-50%, -50%);
+            padding: 0.5rem 1.15rem;
             border-radius: 999px;
-            font-size: 0.75rem;
+            font-size: clamp(0.6875rem, 2vw, 0.8125rem);
             font-weight: 800;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            background: var(--funnel-gradient);
-            color: var(--secondary);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            white-space: nowrap;
+            color: var(--text);
+            background: linear-gradient(180deg, #1f1f1f 0%, var(--secondary) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow:
+                0 0 0 1px rgba(var(--brand-yellow-rgb) / 0.25),
+                0 8px 24px rgba(0, 0, 0, 0.45);
+        }
+
+        .funnel-feature__panel {
+            position: relative;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.92);
+            background: rgba(8, 8, 8, 0.62);
+            -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(14px);
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            overflow: visible;
+        }
+
+        @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+            .funnel-feature__panel {
+                background: rgba(12, 12, 12, 0.94);
+            }
         }
 
         .funnel-feature__head {
-            padding: 2rem 1.5rem 1.25rem;
-            background: var(--secondary);
-            border-bottom: 3px solid var(--primary);
+            padding: 1.85rem 1.5rem 1.15rem;
+            border-bottom: 2px solid rgba(var(--brand-yellow-rgb) / 0.45);
+            background: rgba(0, 0, 0, 0.28);
+            border-radius: 1rem 1rem 0 0;
             color: var(--text);
         }
 
@@ -612,6 +1145,9 @@
             margin: 0;
             font-size: clamp(1.15rem, 3vw, 1.5rem);
             font-weight: 800;
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 1.25;
         }
 
         .funnel-feature__body {
@@ -620,6 +1156,11 @@
             gap: 1.25rem;
             padding: 1.5rem;
             align-items: center;
+            background: transparent;
+            border: none;
+            border-radius: 0 0 1rem 1rem;
+            box-shadow: none;
+            overflow: hidden;
         }
 
         @media (min-width: 768px) {
@@ -631,7 +1172,7 @@
         .funnel-feature__text p {
             margin: 0;
             font-size: 0.9375rem;
-            color: var(--funnel-ink-muted);
+            color: rgba(255, 255, 255, 0.82);
             line-height: 1.6;
         }
 
@@ -641,9 +1182,29 @@
             align-items: center;
             justify-content: center;
             border-radius: 0.5rem;
-            background: var(--funnel-surface-alt);
-            border: 1px solid rgba(255, 230, 109, 0.2);
+            background: rgba(var(--brand-yellow-rgb) / 0.08);
+            border: 1px solid rgba(var(--brand-yellow-rgb) / 0.28);
             font-size: 2.5rem;
+        }
+
+        .funnel-feature__visual--photo {
+            aspect-ratio: 5 / 4;
+            width: 100%;
+            min-height: 0;
+            padding: 0;
+            display: block;
+            background: #0a0a0a;
+            overflow: hidden;
+        }
+
+        .funnel-feature__visual--photo img {
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            display: block;
+            border-radius: 0;
+            object-fit: cover;
+            object-position: center;
         }
 
         /* Proof */
@@ -673,7 +1234,7 @@
 
         .funnel-proof-box--after {
             background: var(--funnel-surface-alt);
-            border-color: rgba(255, 230, 109, 0.35);
+            border-color: rgba(var(--brand-yellow-rgb) / 0.35);
         }
 
         .funnel-proof-box h4 {
@@ -687,6 +1248,20 @@
         .funnel-proof-box--before h4 { color: var(--secondary); }
         .funnel-proof-box--after h4 { color: var(--accent); }
 
+        .funnel-proof-rating {
+            margin: 0 0 0.85rem;
+            line-height: 0;
+        }
+
+        .funnel-proof-rating img {
+            display: block;
+            width: auto;
+            max-width: 100%;
+            height: 1.75rem;
+            object-fit: contain;
+            object-position: left center;
+        }
+
         .funnel-proof-box ul { margin: 0; padding-left: 1.1rem; font-size: 0.9375rem; }
 
         .funnel-sub--spaced { margin-top: 1.5rem; }
@@ -697,6 +1272,8 @@
             font-weight: 800;
             color: var(--secondary);
         }
+
+        .funnel-band--dark .funnel-pull { color: var(--text); }
 
         .funnel-faq {
             max-width: 40rem;
@@ -731,66 +1308,34 @@
             color: var(--funnel-ink-muted);
         }
 
+        .funnel-band--dark .funnel-faq details {
+            border-bottom-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .funnel-band--dark .funnel-faq summary { color: var(--text); }
+
+        .funnel-band--dark .funnel-faq__a { color: rgba(255, 255, 255, 0.75); }
+
         .funnel-footer {
-            padding: 2rem 0 3rem;
+            padding: 0.875rem 0 1rem;
             text-align: center;
-            font-size: 0.8125rem;
-            color: var(--funnel-ink-muted);
-            background: var(--funnel-surface);
-            border-top: 1px solid var(--funnel-border);
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.65);
+            background: var(--background);
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .funnel-footer a {
-            color: var(--funnel-ink-muted);
+            color: rgba(255, 255, 255, 0.65);
             text-decoration: none;
         }
 
-        .funnel-footer a:hover { color: var(--secondary); }
+        .funnel-footer a:hover { color: var(--primary); }
 
         .funnel-footer__fine {
-            margin-top: 0.75rem;
-        }
-
-        .funnel-testimonials {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.25rem;
-            max-width: 52rem;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        @media (min-width: 640px) {
-            .funnel-testimonials { grid-template-columns: repeat(3, 1fr); }
-        }
-
-        .funnel-testimonial-card {
-            padding: 1.35rem;
-            background: var(--funnel-surface);
-            border: 1px solid var(--funnel-border);
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-        }
-
-        .funnel-testimonial-card__stars {
-            margin-bottom: 0.75rem;
-            color: var(--primary);
-            letter-spacing: 0.12em;
-            font-size: 0.9rem;
-        }
-
-        .funnel-testimonial-card blockquote {
-            margin: 0 0 0.85rem;
-            font-size: 0.9375rem;
-            line-height: 1.55;
-            color: var(--funnel-ink);
-        }
-
-        .funnel-testimonial-card cite {
-            font-size: 0.8125rem;
-            font-weight: 700;
-            font-style: normal;
-            color: var(--funnel-ink-muted);
+            margin-top: 0.4rem;
+            font-size: 0.6875rem;
+            line-height: 1.4;
         }
 
         .funnel-sticky-cta {
@@ -854,6 +1399,272 @@
             }
         }
 
+        /* Mobile only — desktop layout unchanged at 768px+ */
+        @media (max-width: 767px) {
+            .funnel-page {
+                font-size: 1rem;
+            }
+
+            .funnel-inner {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .funnel-band {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            #hero.funnel-band--dark {
+                padding-top: 1.25rem;
+                padding-bottom: 2rem;
+            }
+
+            .funnel-band--dark:not(#hero) {
+                padding-top: 1.75rem;
+                padding-bottom: 1.75rem;
+            }
+
+            .funnel-band--modules-intro {
+                padding-bottom: 1rem;
+            }
+
+            .funnel-band--modules-body,
+            .funnel-band--prompts-body {
+                padding-top: 1.5rem;
+            }
+
+            .funnel-trust {
+                gap: 0.4rem;
+                margin-bottom: 1rem;
+                font-size: 0.6875rem;
+                line-height: 1.35;
+            }
+
+            .funnel-hero-h1 {
+                font-size: clamp(1.2rem, 6.5vw, 1.65rem);
+                line-height: 1.2;
+                margin-bottom: 0.75rem;
+            }
+
+            .funnel-hero-sub {
+                margin-bottom: 1.25rem;
+                font-size: 0.9375rem;
+                line-height: 1.5;
+            }
+
+            .funnel-hero-showcase img {
+                border-radius: 0.5rem;
+            }
+
+            .funnel-hero-launch-strip {
+                margin-top: 0.5rem;
+                padding: 0.75rem 0.85rem 0.85rem;
+            }
+
+            .funnel-urgency__hook {
+                font-size: 0.875rem;
+            }
+
+            .funnel-hero-submit {
+                padding: 1rem;
+            }
+
+            .funnel-form-intro {
+                margin: -1rem -1rem 1rem;
+            }
+
+            .funnel-form-pricing {
+                padding: 0.85rem 0.75rem 0.75rem;
+            }
+
+            .funnel-form-pricing .funnel-price-big {
+                font-size: 1.35rem;
+            }
+
+            .funnel-field input {
+                font-size: 1rem;
+                padding: 0.75rem 0.85rem;
+            }
+
+            .funnel-btn {
+                padding: 1rem 0.85rem;
+                font-size: 0.875rem;
+            }
+
+            .funnel-cta {
+                margin: 1.25rem auto;
+            }
+
+            .funnel-cta--spaced {
+                margin-top: 1.75rem;
+            }
+
+            .funnel-cta-sub {
+                font-size: 0.8125rem;
+                line-height: 1.4;
+            }
+
+            .funnel-float-wrap {
+                margin-top: -2.25rem;
+                padding-bottom: 2.25rem;
+            }
+
+            .funnel-float-card {
+                padding: 1.35rem 1rem;
+                border-radius: 0.75rem;
+            }
+
+            .funnel-float-card .funnel-h2 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .funnel-h2 {
+                font-size: clamp(1.15rem, 5.5vw, 1.5rem);
+            }
+
+            .funnel-h2--final {
+                font-size: clamp(1.05rem, 4.8vw, 1.35rem);
+            }
+
+            .funnel-sub {
+                font-size: 0.9375rem;
+                margin-bottom: 1rem;
+            }
+
+            .funnel-pull {
+                font-size: 1.1rem;
+            }
+
+            .funnel-pill {
+                padding: 0.45rem 0.9rem;
+                font-size: 0.6875rem;
+                line-height: 1.3;
+                white-space: normal;
+                text-align: center;
+            }
+
+            .funnel-pill-seam__inner {
+                height: 2rem;
+            }
+
+            .funnel-features {
+                gap: 2rem;
+                margin-top: 1.25rem;
+                padding-top: 0.75rem;
+            }
+
+            .funnel-feature__badge {
+                max-width: calc(100% - 1.5rem);
+                padding: 0.4rem 0.75rem;
+                font-size: 0.625rem;
+                white-space: normal;
+                text-align: center;
+                line-height: 1.25;
+            }
+
+            .funnel-feature__head {
+                padding: 1.5rem 0.85rem 0.9rem;
+            }
+
+            .funnel-feature__head h3 {
+                font-size: 1.05rem;
+            }
+
+            .funnel-feature__body {
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .funnel-feature__text p {
+                font-size: 0.875rem;
+                line-height: 1.55;
+            }
+
+            .funnel-checklist li {
+                font-size: 0.875rem;
+                gap: 0.6rem;
+            }
+
+            .funnel-faq summary {
+                padding: 0.85rem 1.75rem 0.85rem 0;
+                font-size: 0.9375rem;
+                line-height: 1.35;
+            }
+
+            .funnel-faq summary::after {
+                margin-top: 0.1rem;
+            }
+
+            .funnel-card-brands {
+                max-width: 100%;
+            }
+
+            .funnel-checkout-trust__guarantee span {
+                max-width: none;
+            }
+
+            .funnel-checkout-trust__secure {
+                max-width: none;
+                font-size: 0.625rem;
+            }
+
+            .funnel-checkout-band {
+                padding-bottom: 1rem;
+            }
+
+            .funnel-band--final-cta {
+                padding-top: 1rem;
+                padding-bottom: 0.85rem;
+            }
+
+            .funnel-offer-card {
+                padding: 1rem;
+            }
+
+            #funnel-checkout {
+                scroll-margin-top: 5.5rem;
+            }
+
+            .funnel-page.funnel-page--sticky-ready {
+                padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));
+            }
+
+            .funnel-sticky-cta {
+                padding: 0.55rem 0.85rem calc(0.55rem + env(safe-area-inset-bottom, 0px));
+                gap: 0.5rem;
+            }
+
+            .funnel-sticky-cta__label {
+                flex: 1;
+                min-width: 0;
+                font-size: 0.6875rem;
+            }
+
+            .funnel-sticky-cta__btn {
+                padding: 0.7rem 0.85rem;
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .funnel-sticky-cta {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .funnel-sticky-cta__label {
+                flex: 1 1 100%;
+                text-align: center;
+            }
+
+            .funnel-sticky-cta__btn {
+                flex: 1 1 100%;
+                text-align: center;
+            }
+        }
+
         @media (min-width: 769px) {
             .funnel-sticky-cta { display: none !important; }
         }
@@ -866,17 +1677,24 @@
         }
 
         @media (prefers-reduced-motion: no-preference) {
-            .funnel-band.funnel-reveal,
-            .funnel-feature.funnel-reveal {
+            .funnel-band.funnel-reveal {
                 opacity: 0;
                 transform: translateY(12px);
                 transition: opacity 0.55s ease, transform 0.55s ease;
             }
 
-            .funnel-band.funnel-reveal.is-visible,
-            .funnel-feature.funnel-reveal.is-visible {
+            .funnel-feature.funnel-reveal {
+                opacity: 0;
+                transition: opacity 0.55s ease;
+            }
+
+            .funnel-band.funnel-reveal.is-visible {
                 opacity: 1;
                 transform: translateY(0);
+            }
+
+            .funnel-feature.funnel-reveal.is-visible {
+                opacity: 1;
             }
 
             .funnel-features .funnel-feature:nth-child(1) { --funnel-reveal-delay: 0.05s; }
@@ -922,26 +1740,34 @@
                 </div>
 
                 <h1 class="funnel-hero-h1">
-                    Own <span class="funnel-highlight">Page 1</span>. Bury The Noise On Google &amp; AI — Before It Burns Your <span class="funnel-highlight">Business</span>.
+                    Own <span class="funnel-highlight">Page 1</span>. Bury The Noise On Google &amp; AI Before It Burns Your <span class="funnel-highlight">Business</span>.
                 </h1>
-                <p class="funnel-hero-sub">The Reputation Operator's Kit: the exact playbook we used to bury a 1.7★ Trustpilot at position 3 under 8 owned assets in 30 days — plus win ChatGPT, Claude &amp; Perplexity.</p>
+                <p class="funnel-hero-sub">The Reputation Operator's Kit: the exact playbook we used to bury a 1.7★ Trustpilot at position 3 under 8 owned assets in 30 days, plus win ChatGPT, Claude &amp; Perplexity.</p>
 
-                <div class="funnel-hero-grid">
-                    <div class="funnel-vsl">
-                        <div class="funnel-vsl__sound">🔊 Watch the walkthrough — sound on recommended</div>
-                        <div class="funnel-vsl__frame" aria-label="Video placeholder">
-                            <span class="funnel-vsl__play" aria-hidden="true">▶</span>
-                            <span>VSL / walkthrough video goes here</span>
-                        </div>
+                <div class="funnel-hero-stack">
+                    <div class="funnel-hero-showcase">
+                        <img src="offer-launch-assets/reputation-kit-mockup.png" alt="The Reputation Operator's Kit: playbook, AI prompts, 7-day framework, and Page 1 dashboard" width="1200" height="675" decoding="async" fetchpriority="high">
                     </div>
 
-                    <div class="funnel-offer-card" id="funnel-checkout">
-                        <div class="funnel-offer-card__visual" aria-hidden="true">📋</div>
-                        <p class="funnel-scarcity">Launch Pricing — Ends Soon</p>
-                        <p class="funnel-price-big">Only <s>$497.00</s> <strong>$197</strong></p>
-                        <p class="funnel-save-line">(Save $300 today)</p>
-                        <p class="funnel-offer-card__note">Get the kit for <s>$497</s> just $197 · Instant delivery</p>
+                    <aside class="funnel-hero-launch-strip" role="region" aria-label="Launch pricing urgency">
+                        <div class="funnel-urgency">
+                            <p class="funnel-urgency__banner">
+                                <span class="funnel-urgency__pulse" aria-hidden="true"></span>
+                                Launch pricing ends soon
+                            </p>
+                            <p class="funnel-urgency__hook">Lock in <strong>$197</strong> before this window closes. Price returns to <s>$497</s>.</p>
+                        </div>
+                    </aside>
 
+                    <div class="funnel-hero-submit" id="funnel-checkout">
+                        <div class="funnel-form-intro">
+                            <p class="funnel-form-kicker">Founding-operator rate · Limited time</p>
+                            <div class="funnel-form-pricing">
+                                <p class="funnel-price-big">Today only: <s>$497</s> <strong>$197</strong></p>
+                                <span class="funnel-form-pricing__badge">Save $300</span>
+                                <p class="funnel-form-pricing__note">Instant digital delivery · One-time payment · No subscription</p>
+                            </div>
+                        </div>
                         <form class="funnel-lead-form" id="funnel-lead-form" novalidate>
                             <div class="funnel-field">
                                 <label for="funnel-full-name">Full name</label>
@@ -959,12 +1785,37 @@
                             <button type="submit" class="funnel-btn funnel-btn--in-card" id="funnel-lead-submit">Continue to checkout</button>
                         </form>
 
-                        <p class="funnel-secure">🔒 Your info is saved securely · Checkout on the next page</p>
+                        <div class="funnel-checkout-trust" role="group" aria-label="Payment security and guarantee">
+                            <div class="funnel-checkout-trust__payments">
+                                <ul class="funnel-card-brands" aria-label="Accepted payment methods">
+                                    <li><img src="offer-launch-assets/card-visa.png" alt="Visa" width="56" height="36" loading="lazy" decoding="async"></li>
+                                    <li><img src="offer-launch-assets/card-mastercard.png" alt="Mastercard" width="56" height="36" loading="lazy" decoding="async"></li>
+                                    <li><img src="offer-launch-assets/card-amex.png" alt="American Express" width="56" height="36" loading="lazy" decoding="async"></li>
+                                    <li><img src="offer-launch-assets/card-discover.png" alt="Discover" width="56" height="36" loading="lazy" decoding="async"></li>
+                                </ul>
+                                <p class="funnel-checkout-trust__payments-label">
+                                    <span>Secure payments by</span>
+                                    <img src="offer-launch-assets/whop-logo.png" alt="Whop" class="funnel-checkout-trust__whop" width="88" height="24">
+                                </p>
+                            </div>
+                            <p class="funnel-checkout-trust__guarantee">
+                                <img src="offer-launch-assets/guarantee-30-day.png" alt="" class="funnel-guarantee-icon" width="56" height="56" loading="lazy" decoding="async">
+                                <span>30-Day Money Back Guarantee</span>
+                            </p>
+                            <p class="funnel-checkout-trust__secure">
+                                <svg class="funnel-lock-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                                    <rect x="4" y="9" width="12" height="9" rx="1.5" fill="currentColor"/>
+                                    <path d="M6.5 9V7a3.5 3.5 0 0 1 7 0v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <circle cx="10" cy="13.5" r="1.25" fill="var(--brand-yellow)"/>
+                                </svg>
+                                <span>100% Secure 256-Bit Encrypted Checkout</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
 
                 <aside class="funnel-cta">
-                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit — $197</a>
+                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit for $197</a>
                     <p class="funnel-cta-sub">Instant Digital Access · Own Page 1 in 7 Days</p>
                 </aside>
             </div>
@@ -977,8 +1828,8 @@
                     <article class="funnel-float-card">
                         <h2 class="funnel-h2">What Is The<br><span class="funnel-gradient-text">Reputation Operator's Kit?</span></h2>
                         <div class="funnel-copy">
-                            <p>The fastest way to reset what people see when they Google you — and what AI says about you — without hiring a $20K/mo agency.</p>
-                            <p>Because let's face it — you already know reputation matters. You've seen deals die after one search. You've heard the horror stories.</p>
+                            <p>The fastest way to reset what people see when they Google you and what AI says about you, without hiring a $20K/mo agency.</p>
+                            <p>Because let's face it, you already know reputation matters. You've seen deals die after one search. You've heard the horror stories.</p>
                             <p><span class="funnel-highlight">What to actually do.</span> Day by day. Hour by hour. That's the part nobody talks about.</p>
                             <p><span class="funnel-highlight">This kit flips the script.</span> Not a course. An operator's system you actually run.</p>
                             <ul class="funnel-checklist">
@@ -997,14 +1848,14 @@
         <div class="funnel-band funnel-band--white funnel-band--flush funnel-reveal">
             <div class="funnel-inner">
                 <aside class="funnel-cta">
-                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit — $197</a>
+                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit for $197</a>
                     <p class="funnel-cta-sub">Instant Digital Access · Own Page 1 in 7 Days</p>
                 </aside>
             </div>
         </div>
 
-        <!-- WHITE: Who -->
-        <section class="funnel-band funnel-band--white funnel-reveal">
+        <!-- DARK: Who -->
+        <section class="funnel-band funnel-band--dark funnel-reveal">
             <div class="funnel-inner">
                 <h2 class="funnel-h2">If Someone Googled You Today,<br>Would You <span class="funnel-gradient-text">Win?</span></h2>
                 <div class="funnel-copy">
@@ -1012,159 +1863,230 @@
                     <ul class="funnel-checklist">
                         <li><span class="funnel-checklist__icon" aria-hidden="true">✓</span>A deal died because an investor found an old Reddit thread</li>
                         <li><span class="funnel-checklist__icon" aria-hidden="true">✓</span>A hit piece ranks above your homepage</li>
-                        <li><span class="funnel-checklist__icon" aria-hidden="true">✓</span>Your name IS the asset — coach, CEO, consultant, founder</li>
+                        <li><span class="funnel-checklist__icon" aria-hidden="true">✓</span>Your name IS the asset: coach, CEO, consultant, founder</li>
                         <li><span class="funnel-checklist__icon" aria-hidden="true">✓</span>You don't know what ChatGPT says about you right now</li>
                         <li><span class="funnel-checklist__icon" aria-hidden="true">✓</span>One Trustpilot result torches 30% of close rate</li>
                     </ul>
                 </div>
                 <aside class="funnel-cta">
-                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit — $197</a>
+                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit for $197</a>
                     <p class="funnel-cta-sub">Instant Digital Access · Own Page 1 in 7 Days</p>
                 </aside>
             </div>
         </section>
 
-        <!-- GREY: AI -->
-        <section class="funnel-band funnel-band--grey funnel-reveal">
+        <!-- WHITE: AI -->
+        <section class="funnel-band funnel-band--white funnel-reveal">
             <div class="funnel-inner">
                 <h2 class="funnel-h2">Your Buyers Aren't Just<br>Googling You <span class="funnel-gradient-text">Anymore</span></h2>
                 <div class="funnel-copy">
-                    <p>ChatGPT. Claude. Perplexity. Grok. They ask "Is [your brand] legit?" and get a confident paragraph — scraped from your worst hits — before they ever land on your site.</p>
+                    <p>ChatGPT. Claude. Perplexity. Grok. They ask "Is [your brand] legit?" and get a confident paragraph, scraped from your worst hits, before they ever land on your site.</p>
                     <p><strong>This kit fixes both. For good.</strong></p>
                 </div>
                 <aside class="funnel-cta">
-                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit — $197</a>
+                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit for $197</a>
                     <p class="funnel-cta-sub">Instant Digital Access · Own Page 1 in 7 Days</p>
                 </aside>
             </div>
         </section>
 
-        <!-- WHITE: Modules intro -->
-        <section class="funnel-band funnel-band--white funnel-reveal">
+        <!-- YELLOW: Modules intro -->
+        <section class="funnel-band funnel-band--yellow funnel-reveal funnel-band--modules-intro">
             <div class="funnel-inner">
                 <h2 class="funnel-h2">Here's What You Get</h2>
-                <p class="funnel-sub">11 sections. Zero fluff. All operator.</p>
-                <span class="funnel-pill">The Full Kit Breakdown</span>
+                <p class="funnel-sub">11 sections. All operator.</p>
             </div>
         </section>
 
+        <div class="funnel-pill-seam funnel-pill-seam--light-dark funnel-reveal">
+            <div class="funnel-pill-seam__inner">
+                <span class="funnel-pill funnel-pill--white">The Full Kit Breakdown</span>
+            </div>
+        </div>
+
         <!-- Brand band: Feature cards -->
-        <section class="funnel-band funnel-band--brand funnel-reveal">
+        <section class="funnel-band funnel-band--brand funnel-reveal funnel-band--modules-body">
             <div class="funnel-inner">
                 <div class="funnel-features">
 
                     <article class="funnel-feature funnel-reveal">
+                        <div class="funnel-feature__panel">
+
                         <span class="funnel-feature__badge">Section 01</span>
                         <div class="funnel-feature__head"><h3>The Reputation Audit</h3></div>
                         <div class="funnel-feature__body">
                             <div class="funnel-feature__text"><p>Diagnose your page 1 in 15 minutes. AI audit prompt runs 10 searches and returns a full scored report for ChatGPT or Claude.</p></div>
-                            <div class="funnel-feature__visual" aria-hidden="true">🔍</div>
+                            <div class="funnel-feature__visual funnel-feature__visual--photo funnel-feature__visual--photo-wide">
+                                <img src="offer-launch-assets/section-01-audit.png" alt="Your brand reviews search results — owned, neutral, and hostile labels" width="500" height="400" loading="lazy" decoding="async">
+                            </div>
+                        </div>
                         </div>
                     </article>
 
                     <article class="funnel-feature funnel-feature--flip funnel-reveal">
+                        <div class="funnel-feature__panel">
+
                         <span class="funnel-feature__badge">Section 02</span>
                         <div class="funnel-feature__head"><h3>The Reddit Farming Playbook</h3></div>
                         <div class="funnel-feature__body">
                             <div class="funnel-feature__text"><p>Crowdreply workflow, intent targeting, thread domination, 3-tier reply strategy. Includes Reddit reply drafter prompt.</p></div>
-                            <div class="funnel-feature__visual" aria-hidden="true">💬</div>
+                            <div class="funnel-feature__visual funnel-feature__visual--photo funnel-feature__visual--photo-wide">
+                                <img src="offer-launch-assets/section-02-reddit.png" alt="Is your brand legit? Reddit reply thread mockup" width="500" height="400" loading="lazy" decoding="async">
+                            </div>
+                        </div>
                         </div>
                     </article>
 
                     <article class="funnel-feature funnel-reveal">
+                        <div class="funnel-feature__panel">
+
                         <span class="funnel-feature__badge">Section 03</span>
                         <div class="funnel-feature__head"><h3>The Positive PR Engine</h3></div>
                         <div class="funnel-feature__body">
-                            <div class="funnel-feature__text"><p>BrandPush, Business Insider, AP News — without a $15K/mo PR firm. PR article + Medium writer prompts included.</p></div>
-                            <div class="funnel-feature__visual" aria-hidden="true">📰</div>
+                            <div class="funnel-feature__text"><p>BrandPush, Business Insider, AP News, without a $15K/mo PR firm. PR article + Medium writer prompts included.</p></div>
+                            <div class="funnel-feature__visual funnel-feature__visual--photo funnel-feature__visual--photo-wide">
+                                <img src="offer-launch-assets/section-03-pr.png" alt="Industry demand surges — positive PR placement mockup" width="500" height="400" loading="lazy" decoding="async">
+                            </div>
+                        </div>
                         </div>
                     </article>
 
                     <article class="funnel-feature funnel-feature--flip funnel-reveal">
+                        <div class="funnel-feature__panel">
+
                         <span class="funnel-feature__badge">Section 04</span>
                         <div class="funnel-feature__head"><h3>The Owned Review Site Method</h3></div>
                         <div class="funnel-feature__body">
                             <div class="funnel-feature__text"><p>Register yourbrands-reviews.com for under $100. Rank for "[your brand] reviews." Full content generator prompt included.</p></div>
-                            <div class="funnel-feature__visual" aria-hidden="true">⭐</div>
+                            <div class="funnel-feature__visual funnel-feature__visual--photo funnel-feature__visual--photo-wide">
+                                <img src="offer-launch-assets/section-04-reviews.png" alt="Your brand reviews — 4.8 star rating mockup" width="500" height="400" loading="lazy" decoding="async">
+                            </div>
+                        </div>
                         </div>
                     </article>
 
                     <article class="funnel-feature funnel-reveal">
+                        <div class="funnel-feature__panel">
+
                         <span class="funnel-feature__badge">Section 05</span>
                         <div class="funnel-feature__head"><h3>Trustpilot, BBB &amp; The Review Stack</h3></div>
                         <div class="funnel-feature__body">
                             <div class="funnel-feature__text"><p>Stack the platforms Google trusts most. Velocity strategy: 10–20 new positive reviews per month. Forever.</p></div>
-                            <div class="funnel-feature__visual" aria-hidden="true">📊</div>
+                            <div class="funnel-feature__visual funnel-feature__visual--photo funnel-feature__visual--photo-wide">
+                                <img src="offer-launch-assets/section-05-trustpilot.png" alt="4.9 star rating review cards, 500+ reviews" width="500" height="400" loading="lazy" decoding="async">
+                            </div>
+                        </div>
                         </div>
                     </article>
 
                     <article class="funnel-feature funnel-feature--flip funnel-reveal">
+                        <div class="funnel-feature__panel">
+
                         <span class="funnel-feature__badge">Section 06</span>
                         <div class="funnel-feature__head"><h3>The AI Layer</h3></div>
                         <div class="funnel-feature__body">
                             <div class="funnel-feature__text"><p>Win ChatGPT, Claude, Perplexity, Gemini. Bio pyramid + Wikidata prompts. Training data plays and live retrieval plays.</p></div>
-                            <div class="funnel-feature__visual" aria-hidden="true">🤖</div>
+                            <div class="funnel-feature__visual funnel-feature__visual--photo funnel-feature__visual--photo-wide">
+                                <img src="offer-launch-assets/section-06-ai-layer.png" alt="Is your brand legit? AI answer with highly recommended highlight" width="500" height="400" loading="lazy" decoding="async">
+                            </div>
+                        </div>
                         </div>
                     </article>
 
                     <article class="funnel-feature funnel-reveal">
+                        <div class="funnel-feature__panel">
+
                         <span class="funnel-feature__badge">Section 07</span>
                         <div class="funnel-feature__head"><h3>7-Day Page 1 Domination Framework</h3></div>
                         <div class="funnel-feature__body">
                             <div class="funnel-feature__text"><p>The full reset. Day by day. Under $885 total. The exact playbook from the 1.7★ Trustpilot case study.</p></div>
-                            <div class="funnel-feature__visual" aria-hidden="true">📅</div>
+                            <div class="funnel-feature__visual funnel-feature__visual--photo funnel-feature__visual--photo-wide">
+                                <img src="offer-launch-assets/section-07-framework.png" alt="7-Day Framework progress tracker mockup" width="500" height="400" loading="lazy" decoding="async">
+                            </div>
+                        </div>
                         </div>
                     </article>
 
                     <article class="funnel-feature funnel-feature--flip funnel-reveal">
+                        <div class="funnel-feature__panel">
+
                         <span class="funnel-feature__badge">Section 08</span>
                         <div class="funnel-feature__head"><h3>The Gray Hat Section</h3></div>
                         <div class="funnel-feature__body">
                             <div class="funnel-feature__text"><p>Aggressive tactics with disclaimers. What $20K–$50K/mo agencies run on you while pretending they don't.</p></div>
-                            <div class="funnel-feature__visual" aria-hidden="true">⚡</div>
+                            <div class="funnel-feature__visual funnel-feature__visual--photo funnel-feature__visual--photo-wide">
+                                <img src="offer-launch-assets/section-08-gray-hat.png" alt="Gray Hat restricted dossier mockup" width="500" height="400" loading="lazy" decoding="async">
+                            </div>
+                        </div>
                         </div>
                     </article>
 
                     <article class="funnel-feature funnel-reveal">
+                        <div class="funnel-feature__panel">
+
                         <span class="funnel-feature__badge">Section 09</span>
                         <div class="funnel-feature__head"><h3>The Maintenance System</h3></div>
                         <div class="funnel-feature__body">
                             <div class="funnel-feature__text"><p>Monthly cadence that protects the moat. Weekly, monthly, quarterly, annual tasks mapped out.</p></div>
-                            <div class="funnel-feature__visual" aria-hidden="true">🛡️</div>
+                            <div class="funnel-feature__visual funnel-feature__visual--photo funnel-feature__visual--photo-wide">
+                                <img src="offer-launch-assets/section-09-maintenance.png" alt="Maintenance system: weekly, monthly, quarterly, and annual cadence" width="500" height="400" loading="lazy" decoding="async">
+                            </div>
+                        </div>
                         </div>
                     </article>
 
                     <article class="funnel-feature funnel-feature--flip funnel-reveal">
+                        <div class="funnel-feature__panel">
+
                         <span class="funnel-feature__badge">Section 10</span>
                         <div class="funnel-feature__head"><h3>Three Ways To Work With Me</h3></div>
                         <div class="funnel-feature__body">
                             <div class="funnel-feature__text"><p>Done-with-you. Consulting. Rev share + upfront. For operators who want this handed off entirely.</p></div>
-                            <div class="funnel-feature__visual" aria-hidden="true">🤝</div>
+                            <div class="funnel-feature__visual funnel-feature__visual--photo funnel-feature__visual--photo-wide">
+                                <img src="offer-launch-assets/section-10-work-with-me.png" alt="Done with you, Consulting, and Rev share options" width="500" height="400" loading="lazy" decoding="async">
+                            </div>
+                        </div>
                         </div>
                     </article>
 
                     <article class="funnel-feature funnel-reveal">
+                        <div class="funnel-feature__panel">
+
                         <span class="funnel-feature__badge">Section 11</span>
                         <div class="funnel-feature__head"><h3>30-Day Quick Start Checklist</h3></div>
                         <div class="funnel-feature__body">
                             <div class="funnel-feature__text"><p>30 action items, 30 days. Execute and see results in 60 days. The complete launch sequence.</p></div>
-                            <div class="funnel-feature__visual" aria-hidden="true">✅</div>
+                            <div class="funnel-feature__visual funnel-feature__visual--photo funnel-feature__visual--photo-wide">
+                                <img src="offer-launch-assets/section-11-quick-start.png" alt="30-Day Quick Start checklist with 30 days badge" width="500" height="400" loading="lazy" decoding="async">
+                            </div>
+                        </div>
                         </div>
                     </article>
 
                 </div>
                 <aside class="funnel-cta funnel-cta--spaced">
-                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit — $197</a>
+                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit for $197</a>
                     <p class="funnel-cta-sub">Instant Digital Access · Own Page 1 in 7 Days</p>
                 </aside>
             </div>
         </section>
 
         <!-- WHITE: 7 prompts -->
-        <section class="funnel-band funnel-band--white funnel-reveal">
+        <section class="funnel-band funnel-band--white funnel-reveal funnel-band--modules-intro">
             <div class="funnel-inner">
                 <h2 class="funnel-h2">You Also Unlock</h2>
+            </div>
+        </section>
+
+        <div class="funnel-pill-seam funnel-pill-seam--white-dark funnel-reveal">
+            <div class="funnel-pill-seam__inner">
                 <span class="funnel-pill">7 Copy-And-Paste AI Prompts</span>
+            </div>
+        </div>
+
+        <!-- DARK: 7 prompts body -->
+        <section class="funnel-band funnel-band--dark funnel-reveal funnel-band--prompts-body">
+            <div class="funnel-inner">
                 <p class="funnel-sub funnel-sub--spaced">Paste into ChatGPT or Claude. Fill the brackets. Get a finished artifact.</p>
                 <ul class="funnel-checklist funnel-checklist--centered">
                     <li><span class="funnel-checklist__icon" aria-hidden="true">✓</span>Reputation Audit Prompt</li>
@@ -1174,27 +2096,33 @@
                     <li><span class="funnel-checklist__icon" aria-hidden="true">✓</span>Bio Pyramid Generator · Wikidata Entry Builder</li>
                 </ul>
                 <aside class="funnel-cta">
-                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit — $197</a>
+                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit for $197</a>
                     <p class="funnel-cta-sub">Instant Digital Access · Own Page 1 in 7 Days</p>
                 </aside>
             </div>
         </section>
 
-        <!-- GREY: Proof -->
-        <section class="funnel-band funnel-band--grey funnel-reveal">
+        <!-- WHITE: Proof -->
+        <section class="funnel-band funnel-band--white funnel-reveal">
             <div class="funnel-inner">
                 <h2 class="funnel-h2">We Didn't Ask Google To Delete Anything.<br>We <span class="funnel-gradient-text">Buried It.</span></h2>
                 <div class="funnel-proof-grid">
                     <div class="funnel-proof-box funnel-proof-box--before">
                         <h4>Before</h4>
+                        <p class="funnel-proof-rating">
+                            <img src="offer-launch-assets/trustpilot-rating-1.7.png" alt="Trustpilot rating: 1.7 out of 5 stars" width="160" height="28" loading="lazy" decoding="async">
+                        </p>
                         <ul>
-                            <li>1.7★ Trustpilot at position 3</li>
+                            <li>1.7 Trustpilot at position 3</li>
                             <li>Hostile Reddit at position 7</li>
                             <li>30% close rate torched</li>
                         </ul>
                     </div>
                     <div class="funnel-proof-box funnel-proof-box--after">
                         <h4>After</h4>
+                        <p class="funnel-proof-rating">
+                            <img src="offer-launch-assets/trustpilot-rating-4.6.png" alt="Trustpilot rating: 4.6 out of 5 stars" width="160" height="28" loading="lazy" decoding="async">
+                        </p>
                         <ul>
                             <li>Trustpilot off page 1 in 7 days</li>
                             <li>8 of 10 results owned in 30 days</li>
@@ -1204,77 +2132,49 @@
                 </div>
                 <p class="funnel-sub funnel-sub--spaced">Day 1 → Audit · Day 7 → Trustpilot buried · Day 30 → 8 of 10 owned</p>
                 <aside class="funnel-cta">
-                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit — $197</a>
+                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit for $197</a>
                     <p class="funnel-cta-sub">Instant Digital Access · Own Page 1 in 7 Days</p>
                 </aside>
             </div>
         </section>
 
-        <!-- Testimonials — PLACEHOLDER quotes: replace with real client testimonials -->
-        <section class="funnel-band funnel-band--white funnel-reveal" id="testimonials">
-            <div class="funnel-inner">
-                <h2 class="funnel-h2">Operators Who Stopped Losing Deals<br>To Their Search Results</h2>
-                <div class="funnel-testimonials">
-                    <article class="funnel-testimonial-card">
-                        <p class="funnel-testimonial-card__stars" aria-hidden="true">★★★★★</p>
-                        <blockquote>Had a Reddit thread killing enterprise deals. Ran the 7-day framework — hostile result off page 1 in nine days. Close rate on warm leads jumped noticeably.</blockquote>
-                        <cite>— M. Reyes, Agency Owner</cite>
-                    </article>
-                    <article class="funnel-testimonial-card">
-                        <p class="funnel-testimonial-card__stars" aria-hidden="true">★★★★★</p>
-                        <blockquote>ChatGPT was summarizing old complaints about us. The AI layer prompts alone paid for the kit. Prospects stopped bringing up garbage from 2021.</blockquote>
-                        <cite>— J. Okonkwo, SaaS Founder</cite>
-                    </article>
-                    <article class="funnel-testimonial-card">
-                        <p class="funnel-testimonial-card__stars" aria-hidden="true">★★★★★</p>
-                        <blockquote>Not a course. Actual checklists. I owned three new page-one assets in two weeks and finally stopped dreading investor diligence calls.</blockquote>
-                        <cite>— S. Chen, High-Ticket Consultant</cite>
-                    </article>
-                </div>
-                <aside class="funnel-cta">
-                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit — $197</a>
-                    <p class="funnel-cta-sub">Instant Digital Access · Own Page 1 in 7 Days</p>
-                </aside>
-            </div>
-        </section>
-
-        <!-- WHITE: Math -->
-        <section class="funnel-band funnel-band--white funnel-reveal">
+        <!-- DARK: Math -->
+        <section class="funnel-band funnel-band--dark funnel-reveal">
             <div class="funnel-inner">
                 <h2 class="funnel-h2">One Bad Result Can Cost You<br><span class="funnel-gradient-text">$1.5M a Year</span></h2>
                 <div class="funnel-copy">
-                    <p>70–95% of buyers over $1K Google you first. 15–40% walk after hostile content. Multiply by your ACV. Six figures lost — we've seen $1.5M from a single Trustpilot listing.</p>
+                    <p>70–95% of buyers over $1K Google you first. 15–40% walk after hostile content. Multiply by your ACV. Six figures lost; we've seen $1.5M from a single Trustpilot listing.</p>
                 </div>
                 <p class="funnel-pull">Under $885 to reset page 1 in 7 days.<br>Under $197 to get the playbook.</p>
                 <aside class="funnel-cta">
-                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit — $197</a>
+                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit for $197</a>
                     <p class="funnel-cta-sub">Instant Digital Access · Own Page 1 in 7 Days</p>
                 </aside>
             </div>
         </section>
 
-        <!-- GREY: Guarantee -->
-        <section class="funnel-band funnel-band--grey funnel-reveal">
+        <!-- WHITE: Guarantee -->
+        <section class="funnel-band funnel-band--white funnel-reveal">
             <div class="funnel-inner funnel-inner--narrow">
                 <h2 class="funnel-h2">Your Purchase Is Backed By Our Guarantee</h2>
                 <div class="funnel-copy">
                     <p>Run the audit. Execute the 7-day framework. Not happy? Email <a href="mailto:team@offerlaunch.ai">team@offerlaunch.ai</a> within 30 days for a full refund. No stipulations.</p>
                 </div>
                 <aside class="funnel-cta">
-                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit — $197</a>
+                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit for $197</a>
                     <p class="funnel-cta-sub">Instant Digital Access · Own Page 1 in 7 Days</p>
                 </aside>
             </div>
         </section>
 
-        <!-- WHITE: FAQ -->
-        <section class="funnel-band funnel-band--white funnel-reveal">
+        <!-- DARK: FAQ -->
+        <section class="funnel-band funnel-band--dark funnel-reveal">
             <div class="funnel-inner">
                 <h2 class="funnel-h2">Frequently Asked Questions</h2>
                 <div class="funnel-faq">
                     <details>
                         <summary>Is this a course?</summary>
-                        <p class="funnel-faq__a">No. Operator's kit — exact plays, frameworks, and AI prompts. A document you actually use.</p>
+                        <p class="funnel-faq__a">No. Operator's kit: exact plays, frameworks, and AI prompts. A document you actually use.</p>
                     </details>
                     <details>
                         <summary>What if my reputation is already clean?</summary>
@@ -1282,7 +2182,7 @@
                     </details>
                     <details>
                         <summary>Will this work for my industry?</summary>
-                        <p class="funnel-faq__a">Yes — coaches, CEOs, consultants, SaaS, agencies, law, real estate. If people Google you, this applies.</p>
+                        <p class="funnel-faq__a">Yes: coaches, CEOs, consultants, SaaS, agencies, law, real estate. If people Google you, this applies.</p>
                     </details>
                     <details>
                         <summary>What about the gray hat section?</summary>
@@ -1294,37 +2194,63 @@
                     </details>
                 </div>
                 <aside class="funnel-cta">
-                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit — $197</a>
+                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit for $197</a>
                     <p class="funnel-cta-sub">Instant Digital Access · Own Page 1 in 7 Days</p>
                 </aside>
             </div>
         </section>
 
         <!-- Second checkout -->
-        <section class="funnel-band funnel-band--brand funnel-reveal funnel-checkout-band" id="checkout-bottom">
+        <section class="funnel-band funnel-band--white funnel-reveal funnel-checkout-band" id="checkout-bottom">
             <div class="funnel-inner funnel-inner--narrow">
                 <h2 class="funnel-h2">Get Instant Access</h2>
-                <p class="funnel-sub">The Reputation Operator's Kit — own page 1 before hostile results cost you another deal.</p>
+                <p class="funnel-sub">The Reputation Operator's Kit: own page 1 before hostile results cost you another deal.</p>
                 <div class="funnel-offer-card">
-                    <div class="funnel-offer-card__visual" aria-hidden="true">📋</div>
-                    <p class="funnel-scarcity">Launch Pricing — Ends Soon</p>
+                    <p class="funnel-kit-value">Full kit value: <strong>$1,499</strong></p>
+                    <p class="funnel-scarcity">Launch Pricing Ends Soon</p>
                     <p class="funnel-price-big">Only <s>$497.00</s> <strong>$197</strong></p>
                     <p class="funnel-save-line">(Save $300 today)</p>
-                    <p class="funnel-offer-card__note">Get the kit for <s>$497</s> just $197 · Instant delivery</p>
-                    <a href="#funnel-checkout" class="funnel-btn funnel-btn--in-card">Get Access — $197</a>
-                    <p class="funnel-secure">🔒 Enter your details in the form above</p>
+                    <p class="funnel-offer-card__note">$1,499 value, get it for <s>$497</s> just $197 · Instant delivery</p>
+                    <a href="#funnel-checkout" class="funnel-btn funnel-btn--in-card">Get Access for $197</a>
+                    <div class="funnel-checkout-trust" role="group" aria-label="Payment security and guarantee">
+                        <div class="funnel-checkout-trust__payments">
+                            <ul class="funnel-card-brands" aria-label="Accepted payment methods">
+                                <li><img src="offer-launch-assets/card-visa.png" alt="Visa" width="56" height="36" loading="lazy" decoding="async"></li>
+                                <li><img src="offer-launch-assets/card-mastercard.png" alt="Mastercard" width="56" height="36" loading="lazy" decoding="async"></li>
+                                <li><img src="offer-launch-assets/card-amex.png" alt="American Express" width="56" height="36" loading="lazy" decoding="async"></li>
+                                <li><img src="offer-launch-assets/card-discover.png" alt="Discover" width="56" height="36" loading="lazy" decoding="async"></li>
+                            </ul>
+                            <p class="funnel-checkout-trust__payments-label">
+                                <span>Secure payments by</span>
+                                <img src="offer-launch-assets/whop-logo.png" alt="Whop" class="funnel-checkout-trust__whop" width="88" height="24">
+                            </p>
+                        </div>
+                        <p class="funnel-checkout-trust__guarantee">
+                            <img src="offer-launch-assets/guarantee-30-day.png" alt="" class="funnel-guarantee-icon" width="56" height="56" loading="lazy" decoding="async">
+                            <span>30-Day Money Back Guarantee</span>
+                        </p>
+                        <p class="funnel-checkout-trust__secure">
+                            <svg class="funnel-lock-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                                <rect x="4" y="9" width="12" height="9" rx="1.5" fill="currentColor"/>
+                                <path d="M6.5 9V7a3.5 3.5 0 0 1 7 0v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="10" cy="13.5" r="1.25" fill="var(--brand-yellow)"/>
+                            </svg>
+                            <span>100% Secure 256-Bit Encrypted Checkout</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- DARK: Final -->
-        <section class="funnel-band funnel-band--dark funnel-reveal">
+        <!-- Final CTA (dark, shared with footer) -->
+        <section class="funnel-band funnel-band--dark funnel-band--final-cta funnel-reveal">
             <div class="funnel-inner funnel-inner--narrow">
                 <h2 class="funnel-hero-h1 funnel-h2--final">Own Page 1. Bury The Noise. Build The Moat.</h2>
+                <p class="funnel-kit-value">Full kit value: <strong>$1,499</strong></p>
                 <p class="funnel-price-big funnel-price-big--light">Only <s>$497.00</s> <strong>$197</strong></p>
                 <p class="funnel-hero-sub">(Save $300 today)</p>
                 <aside class="funnel-cta">
-                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit — $197</a>
+                    <a href="#funnel-checkout" class="funnel-btn">YES! I Want The Reputation Operator's Kit for $197</a>
                     <p class="funnel-cta-sub">🔒 Secure checkout · ⚡ Instant delivery · One-time payment</p>
                 </aside>
             </div>
@@ -1342,7 +2268,7 @@
     </footer>
 
     <aside class="funnel-sticky-cta" id="funnel-sticky-cta" aria-label="Quick checkout">
-        <span class="funnel-sticky-cta__label">Reputation Operator's Kit — $197</span>
+        <span class="funnel-sticky-cta__label">Reputation Operator's Kit, $197</span>
         <a href="#funnel-checkout" class="funnel-sticky-cta__btn">Get Access</a>
     </aside>
 
@@ -1365,14 +2291,29 @@
             if (!checkoutAnchor) return;
             checkoutAnchor.scrollIntoView({
                 behavior: reducedMotion ? 'auto' : 'smooth',
-                block: 'center',
+                block: 'start',
             });
+            var firstField = document.getElementById('funnel-full-name');
+            if (firstField) {
+                window.setTimeout(function () {
+                    firstField.focus({ preventScroll: true });
+                }, reducedMotion ? 0 : 400);
+            }
         }
 
-        document.querySelectorAll('a[href="#funnel-checkout"]').forEach(function (link) {
+        document.querySelectorAll('a[href="#funnel-checkout"], a[href$="#funnel-checkout"]').forEach(function (link) {
             link.addEventListener('click', function (e) {
+                var onPage = link.getAttribute('href') === '#funnel-checkout' ||
+                    (link.pathname.replace(/\/$/, '') === window.location.pathname.replace(/\/$/, '') &&
+                        link.hash === '#funnel-checkout');
+                if (!onPage) return;
                 e.preventDefault();
                 scrollToCheckout();
+                if (history.replaceState) {
+                    history.replaceState(null, '', '#funnel-checkout');
+                } else {
+                    window.location.hash = 'funnel-checkout';
+                }
                 if (window.ReputationKitFunnel) {
                     window.ReputationKitFunnel.trackInitiateCheckout();
                 }

@@ -1,11 +1,20 @@
 /* CSS Variables */
 :root {
-    --primary: #FFE66D;
-    --secondary: #1A1A1A;
-    --accent: #FFD700;
-    --text: #FFFFFF;
-    --light-text: #FFFFFF;
-    --background: #0A0A0A;
+    /* OfferLaunch brand palette */
+    --brand-black: #000000;
+    --brand-yellow: #FFCE00;
+    --brand-yellow-gold: #FFB100;
+    --brand-orange: #FF8900;
+    --brand-white: #FFFFFF;
+    --brand-yellow-rgb: 255 206 0;
+
+    /* Semantic tokens (map to brand) */
+    --primary: var(--brand-yellow);
+    --secondary: var(--brand-black);
+    --accent: var(--brand-orange);
+    --text: var(--brand-white);
+    --light-text: var(--brand-white);
+    --background: var(--brand-black);
     --light-background: #1A1A1A;
 }
 

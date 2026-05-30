@@ -607,36 +607,44 @@ const optimizedScrollHandler = debounce(function() {
 
 window.addEventListener('scroll', optimizedScrollHandler);
 
-(function initApplyTypeformModal() {
-    var page = document.querySelector('.apply-funnel');
-    if (!page) return;
+(function initTypeformModals() {
+    var modalConfigs = [
+        { modalId: 'apply-typeform-modal', openSelector: '#apply-typeform-open' },
+        { modalId: 'rk-book-typeform-modal', openSelector: '.rk-book-typeform-open' },
+    ];
 
-    var openBtn = document.getElementById('apply-typeform-open');
-    var modal = document.getElementById('apply-typeform-modal');
-    if (!openBtn || !modal) return;
+    modalConfigs.forEach(function (cfg) {
+        var modal = document.getElementById(cfg.modalId);
+        if (!modal) return;
 
-    function openModal() {
-        modal.hidden = false;
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('apply-funnel-modal-open');
-    }
+        var openers = document.querySelectorAll(cfg.openSelector);
+        if (!openers.length) return;
 
-    function closeModal() {
-        modal.hidden = true;
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('apply-funnel-modal-open');
-    }
-
-    openBtn.addEventListener('click', openModal);
-
-    modal.querySelectorAll('[data-close-modal]').forEach(function (el) {
-        el.addEventListener('click', closeModal);
-    });
-
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && !modal.hidden) {
-            closeModal();
+        function openModal() {
+            modal.hidden = false;
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('apply-funnel-modal-open');
         }
+
+        function closeModal() {
+            modal.hidden = true;
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('apply-funnel-modal-open');
+        }
+
+        openers.forEach(function (btn) {
+            btn.addEventListener('click', openModal);
+        });
+
+        modal.querySelectorAll('[data-close-modal]').forEach(function (el) {
+            el.addEventListener('click', closeModal);
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && !modal.hidden) {
+                closeModal();
+            }
+        });
     });
 })();
 
