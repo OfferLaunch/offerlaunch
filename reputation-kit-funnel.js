@@ -346,6 +346,26 @@
     }
   }
 
+  function buildThankYouRedirectUrl(lead) {
+    var cfg = config();
+    var path = cfg.thankYouPath || '/thank-you';
+    var q = buildQuery(lead);
+    return path + (q ? '?' + q : '');
+  }
+
+  function redirectTopToThankYou(lead) {
+    var url = buildThankYouRedirectUrl(lead);
+    try {
+      if (global.top && global.top !== global.self) {
+        global.top.location.href = url;
+      } else {
+        global.location.href = url;
+      }
+    } catch (e) {
+      global.location.href = url;
+    }
+  }
+
   function initScheduleBookingListener() {
     if (global.__rkScheduleBookingListener) return;
     global.__rkScheduleBookingListener = true;
@@ -365,6 +385,21 @@
         inputs: inputs,
         savedAt: Date.now(),
       });
+
+      if (lead && lead.email) {
+        fetch('/api/reputation-kit-booking-confirm', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: lead.first_name,
+            email: lead.email,
+          }),
+        }).catch(function () { /* non-blocking */ });
+      }
+
+      if (document.querySelector('.rk-schedule-page')) {
+        redirectTopToThankYou(lead);
+      }
     });
   }
 
