@@ -4081,6 +4081,15 @@ body.apply-funnel-modal-open {
     color: #fff0a8;
 }
 
+.rk-confirm-note__reschedule-wrap {
+    display: block;
+    margin-top: 0.65rem;
+}
+
+.rk-confirm-note__reschedule-wrap a[hidden] {
+    display: none;
+}
+
 .thank-you-page .thank-you-page__legacy {
     display: flex;
     flex-direction: column;

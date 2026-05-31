@@ -2,6 +2,8 @@
   'use strict';
 
   var STORAGE_KEY = 'rk_lead_v1';
+  var BOOKING_STORAGE_KEY = 'rk_booking_confirm_v1';
+  var GHL_BOOKING_ORIGIN = 'https://api.leadconnectorhq.com';
 
   function config() {
     return global.REPUTATION_KIT_CONFIG || {};
@@ -329,8 +331,47 @@
     });
   }
 
+  function saveBookingConfirm(payload) {
+    try {
+      sessionStorage.setItem(BOOKING_STORAGE_KEY, JSON.stringify(payload));
+    } catch (e) { /* ignore */ }
+  }
+
+  function parseGhlBookingInputs(raw) {
+    if (!raw || typeof raw !== 'string') return null;
+    try {
+      return JSON.parse(raw);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function initScheduleBookingListener() {
+    if (global.__rkScheduleBookingListener) return;
+    global.__rkScheduleBookingListener = true;
+
+    global.addEventListener('message', function (event) {
+      if (event.origin !== GHL_BOOKING_ORIGIN) return;
+      var data = event.data;
+      if (!Array.isArray(data) || data[0] !== 'msgsndr-booking-complete') return;
+
+      var lead = resolveLead();
+      var booking = data[1] && typeof data[1] === 'object' ? data[1] : {};
+      var inputs = parseGhlBookingInputs(data[2]);
+
+      saveBookingConfirm({
+        lead: lead,
+        booking: booking,
+        inputs: inputs,
+        savedAt: Date.now(),
+      });
+    });
+  }
+
   function initSchedulePage() {
     if (!document.querySelector('.rk-schedule-page')) return;
+
+    initScheduleBookingListener();
 
     var lead = resolveLead();
     var cfg = config();
@@ -387,6 +428,40 @@
     );
   }
 
+  function initBookTypeformModal() {
+    var modal = document.getElementById('rk-book-typeform-modal');
+    if (!modal) return;
+
+    var openers = document.querySelectorAll('.rk-book-typeform-open');
+    if (!openers.length) return;
+
+    function openModal() {
+      modal.hidden = false;
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('apply-funnel-modal-open');
+    }
+
+    function closeModal() {
+      modal.hidden = true;
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('apply-funnel-modal-open');
+    }
+
+    openers.forEach(function (btn) {
+      btn.addEventListener('click', openModal);
+    });
+
+    modal.querySelectorAll('[data-close-modal]').forEach(function (el) {
+      el.addEventListener('click', closeModal);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !modal.hidden) {
+        closeModal();
+      }
+    });
+  }
+
   function initBookPage() {
     if (!document.querySelector('.rk-book-page')) return;
 
@@ -396,6 +471,7 @@
     }
 
     prepareBookTypeformEmbed();
+    initBookTypeformModal();
   }
 
   function markWhopEmbedReady() {

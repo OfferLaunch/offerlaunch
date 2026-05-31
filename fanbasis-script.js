@@ -610,7 +610,6 @@ window.addEventListener('scroll', optimizedScrollHandler);
 (function initTypeformModals() {
     var modalConfigs = [
         { modalId: 'apply-typeform-modal', openSelector: '#apply-typeform-open' },
-        { modalId: 'rk-book-typeform-modal', openSelector: '.rk-book-typeform-open' },
     ];
 
     modalConfigs.forEach(function (cfg) {
@@ -648,7 +647,15 @@ window.addEventListener('scroll', optimizedScrollHandler);
     });
 })();
 
-(function () {
+function isOfferLaunchHomepage() {
+    var path = (window.location.pathname || '/')
+        .replace(/\/index\.html$/i, '')
+        .replace(/\/$/, '');
+    return path === '';
+}
+
+(function loadHomepageChatWidget() {
+    if (!isOfferLaunchHomepage()) return;
     if (document.querySelector('script[data-widget-id="6a160ce3b2d4c061bc457034"]')) return;
     var el = document.createElement('script');
     el.src = 'https://widgets.leadconnectorhq.com/loader.js';
